@@ -56,7 +56,8 @@ move_bounce_all (false);
 
 //slow down
 if speed &gt; 1 {
-    speed -= 1;
+    speed -= 2;
+    if speed &lt; 0 {speed = 0;}
 }
 </string>
           </argument>

@@ -57,6 +57,7 @@
         <script>scripts\DebugLogInitialise.gml</script>
       </scripts>
       <script>scripts\changesprite.gml</script>
+      <script>scripts\death.gml</script>
     </scripts>
     <scripts name="player states">
       <script>scripts\movestate.gml</script>
@@ -73,6 +74,7 @@
   </scripts>
   <objects name="objects">
     <objects name="level">
+      <object>objects\obackground</object>
       <object>objects\owall</object>
       <object>objects\odoor</object>
     </objects>
@@ -85,13 +87,13 @@
       <object>objects\oplayerstats</object>
       <object>objects\odash</object>
     </objects>
-    <object>objects\obackground</object>
     <objects name="enemys">
       <object>objects\oslime</object>
     </objects>
     <objects name="fx">
       <object>objects\oblood</object>
     </objects>
+    <object>objects\odamage</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rhome</room>

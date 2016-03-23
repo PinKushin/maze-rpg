@@ -25,25 +25,10 @@ if (up || down) {
 
 //change sprites
 changesprite (0.2, splayerright, splayerleft, splayerup, splayerdown)
-/*var imgspd = 0.2;
-
-if right {
-    sprite_index = splayerright;
-    image_speed = imgspd;
-}
-if left {
-    sprite_index = splayerleft;
-    image_speed = imgspd;
-}
-if up {
-    sprite_index = splayerup;
-    image_speed = imgspd;
-}
-if down {
-    sprite_index = splayerdown;
-    image_speed = imgspd;
-}
-if hspd == 0 && vspd == 0 {image_speed = 0; image_index = 0;}*/
 
 move (osolidpar);
 
+///change to attack state
+if attack {
+    instance_create (mouse_x, mouse_y, odamage)
+}
