@@ -1,0 +1,2 @@
+///attackstate()
+getinput()
