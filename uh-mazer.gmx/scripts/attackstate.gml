@@ -1,2 +1,1 @@
-///attackstate()
-getinput()
+///attackstate

@@ -20,11 +20,11 @@
   <width>14</width>
   <height>21</height>
   <frames>
-    <frame index="0">images\sPlayerLeft_0.png</frame>
-    <frame index="1">images\sPlayerLeft_1.png</frame>
-    <frame index="2">images\sPlayerLeft_2.png</frame>
-    <frame index="3">images\sPlayerLeft_3.png</frame>
-    <frame index="4">images\sPlayerLeft_4.png</frame>
-    <frame index="5">images\sPlayerLeft_5.png</frame>
+    <frame index="0">images\splayerleft_0.png</frame>
+    <frame index="1">images\splayerleft_1.png</frame>
+    <frame index="2">images\splayerleft_2.png</frame>
+    <frame index="3">images\splayerleft_3.png</frame>
+    <frame index="4">images\splayerleft_4.png</frame>
+    <frame index="5">images\splayerleft_5.png</frame>
   </frames>
 </sprite>

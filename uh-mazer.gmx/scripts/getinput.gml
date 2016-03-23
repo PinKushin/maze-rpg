@@ -4,15 +4,11 @@ right = keyboard_check (ord ("D"));
 left = keyboard_check (ord ("A"));
 up = keyboard_check (ord ("W"));
 down = keyboard_check (ord ("S"));
-/*pause = keyboard_check_pressed (vk_escape);
+pause = keyboard_check_pressed (vk_escape);
 dash = keyboard_check_pressed (vk_shift);
 attack = mouse_check_button_pressed (mb_left);
-attackreleased = gamepad_button_check_released (mb_left);
-space = keyboard_check_pressed (vk_space);*/
-
-//get the axis
-xaxis = (right - left);
-yaxis = (down - up);
+attackreleased = mouse_check_button_released (mb_left);
+space = keyboard_check_pressed (vk_space);
 
 /*overide controls for a gamepad
 var gp_id = 0; //player one

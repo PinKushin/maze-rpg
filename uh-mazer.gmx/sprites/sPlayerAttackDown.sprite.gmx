@@ -20,12 +20,12 @@
   <width>28</width>
   <height>42</height>
   <frames>
-    <frame index="0">images\sPlayerAttackDown_0.png</frame>
-    <frame index="1">images\sPlayerAttackDown_1.png</frame>
-    <frame index="2">images\sPlayerAttackDown_2.png</frame>
-    <frame index="3">images\sPlayerAttackDown_3.png</frame>
-    <frame index="4">images\sPlayerAttackDown_4.png</frame>
-    <frame index="5">images\sPlayerAttackDown_5.png</frame>
-    <frame index="6">images\sPlayerAttackDown_6.png</frame>
+    <frame index="0">images\splayerattackdown_0.png</frame>
+    <frame index="1">images\splayerattackdown_1.png</frame>
+    <frame index="2">images\splayerattackdown_2.png</frame>
+    <frame index="3">images\splayerattackdown_3.png</frame>
+    <frame index="4">images\splayerattackdown_4.png</frame>
+    <frame index="5">images\splayerattackdown_5.png</frame>
+    <frame index="6">images\splayerattackdown_6.png</frame>
   </frames>
 </sprite>
