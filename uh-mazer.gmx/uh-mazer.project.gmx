@@ -40,6 +40,9 @@
     <sprites name="fx">
       <sprite>sprites\sblood</sprite>
     </sprites>
+    <sprite>sprites\scaught</sprite>
+    <sprite>sprites\sprite27</sprite>
+    <sprite>sprites\sprite28</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bgrass</background>
@@ -93,10 +96,17 @@
     <objects name="fx">
       <object>objects\oblood</object>
     </objects>
-    <object>objects\odamage</object>
+    <object>objects\ocaught</object>
+    <objects name="damage">
+      <object>objects\opdamage</object>
+      <object>objects\oedamage</object>
+    </objects>
+    <object>objects\object13</object>
+    <object>objects\object14</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rhome</room>
+    <room>rooms\rhomeroom</room>
   </rooms>
   <help>
     <rtf>help.rtf</rtf>

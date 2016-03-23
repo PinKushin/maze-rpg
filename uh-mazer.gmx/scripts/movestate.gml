@@ -30,5 +30,6 @@ move (osolidpar);
 
 ///change to attack state
 if attack {
-    instance_create (mouse_x, mouse_y, odamage)
+    image_index = 0;
+    state = attackstate;
 }
