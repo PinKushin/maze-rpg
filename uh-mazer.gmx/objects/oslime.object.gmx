@@ -54,8 +54,33 @@ state = choose (slimemoveright, slimemoveleft, slimemoveup, slimemovedown);
           <argument>
             <kind>1</kind>
             <string>///create drop
+event_inherited ();
+
 instance_create (x, y, oexp);
 
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Stall alarm
 </string>
           </argument>
         </arguments>
@@ -80,6 +105,42 @@ instance_create (x, y, oexp);
             <kind>1</kind>
             <string>///execute state
 script_execute (state)
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="4" ename="oplayer">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///damage player
+if instance_exists (other) {
+    if state != slimestallstate {
+        var dir = point_direction (other.x, other.y, x, y);
+        var xdir = lengthdir_x (1, dir);
+        var ydir = lengthdir_y (1, dir);
+        var dmg = instance_create (other.x + xdir, other.y + ydir, oedamage)
+        with other {
+            takedamage(1, 5)
+        }
+        state = slimestallstate;
+        alarm[STALL] = room_speed; //stall alarm set to 1 second
+    }
+}
 </string>
           </argument>
         </arguments>

@@ -1,7 +1,8 @@
 ///slimemoveright
-var wallatright = position_meeting (bbox_right + 1, y, osolidpar)
+var enemyatright = position_meeting (bbox_right + 1, y, oenemypar);
+var wallatright = position_meeting (bbox_right + 1, y, osolidpar);
 
-if wallatright {
+if wallatright || enemyatright {
     state = choose (slimemoveleft, slimemoveup, slimemovedown);
 }
 

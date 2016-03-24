@@ -1,7 +1,8 @@
 ///slimemoveleft
-var wallatleft = position_meeting (bbox_left - 1, y, osolidpar)
+var enemyatleft = position_meeting (bbox_left - 1, y, oenemypar);
+var wallatleft = position_meeting (bbox_left - 1, y, osolidpar);
 
-if wallatleft {
+if wallatleft ||enemyatleft {
     state = choose (slimemoveright, slimemoveup, slimemovedown);
 }
 

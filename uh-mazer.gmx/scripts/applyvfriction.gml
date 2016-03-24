@@ -3,7 +3,7 @@ var amount = argument[0];
 
 if (vspd != 0) {
     if abs(vspd) - amount > 0 {
-        vspd = 0 // (down-up) * amount;
+        vspd -= amount * sign (vspd);
     }else{
     vspd = 0;
     }

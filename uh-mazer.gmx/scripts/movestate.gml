@@ -2,6 +2,8 @@
 getinput();
 
 //move
+
+//horizontal
 if (right || left) {
     hspd += (right-left) * acc;
     hspddir = right - left;
@@ -10,8 +12,9 @@ if (right || left) {
     if hspd < -spd { hspd = -spd;}
 }else{
     //friction
-    applyhfriction(1)
+    applyhfriction(fric)
 }
+///vertical
 if (up || down) {
     vspd += (down - up) * acc;
     vspddir = down - up;
@@ -20,7 +23,7 @@ if (up || down) {
     if vspd < -spd { vspd = -spd;}
 }else{
     //friction
-    applyvfriction (1)
+    applyvfriction (fric)
 }
 
 //change sprites
@@ -33,3 +36,4 @@ if attack {
     image_index = 0;
     state = attackstate;
 }
+//change to hurt state

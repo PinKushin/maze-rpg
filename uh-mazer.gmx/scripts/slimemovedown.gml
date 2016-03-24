@@ -1,7 +1,8 @@
 ///slimemovedown
-var wallatbot = position_meeting (x, bbox_bottom + 1, osolidpar)
+var enemyatbot = position_meeting (x, bbox_bottom + 1, oenemypar);
+var wallatbot = position_meeting (x, bbox_bottom + 1, osolidpar);
 
-if wallatbot {
+if wallatbot || enemyatbot {
     state = choose (slimemoveup, slimemoveright, slimemoveleft);
 }
 

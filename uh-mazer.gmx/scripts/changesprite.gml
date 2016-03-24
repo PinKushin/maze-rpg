@@ -2,19 +2,19 @@
 //change sprites
 var imgspd = argument0;
 
-if right {
+if hspd > 0 {
     sprite_index = argument1;
     image_speed = imgspd;
 }
-if left {
+if hspd < 0 {
     sprite_index = argument2;
     image_speed = imgspd;
 }
-if up {
+if vspd < 0 {
     sprite_index = argument3;
     image_speed = imgspd;
 }
-if down {
+if vspd > 0 {
     sprite_index = argument4;
     image_speed = imgspd;
 }

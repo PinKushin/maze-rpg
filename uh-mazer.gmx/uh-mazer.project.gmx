@@ -25,7 +25,10 @@
       <sprite>sprites\sdamage</sprite>
       <sprite>sprites\splayerstats</sprite>
       <sprite>sprites\sbackground</sprite>
-      <sprite>sprites\splayermask</sprite>
+      <sprite>sprites\scamhelper</sprite>
+      <sprites name="mask">
+        <sprite>sprites\splayermask</sprite>
+      </sprites>
     </sprites>
     <sprites name="level">
       <sprite>sprites\scoin</sprite>
@@ -43,6 +46,8 @@
   </sprites>
   <backgrounds name="background">
     <background>background\bgrass</background>
+    <background>background\bstarsclose</background>
+    <background>background\bstarsfar</background>
   </backgrounds>
   <paths name="paths"/>
   <scripts name="scripts">
@@ -58,11 +63,15 @@
       </scripts>
       <script>scripts\changesprite.gml</script>
       <script>scripts\death.gml</script>
+      <script>scripts\takedamage.gml</script>
+      <script>scripts\damagebounce.gml</script>
     </scripts>
     <scripts name="player states">
       <script>scripts\movestate.gml</script>
       <script>scripts\attackstate.gml</script>
       <script>scripts\dashstate.gml</script>
+      <script>scripts\menustate.gml</script>
+      <script>scripts\hurtstate.gml</script>
     </scripts>
     <scripts name="enemys">
       <scripts name="slime">
@@ -70,17 +79,21 @@
         <script>scripts\slimemovedown.gml</script>
         <script>scripts\slimemoveup.gml</script>
         <script>scripts\slimemoveleft.gml</script>
+        <script>scripts\slimestallstate.gml</script>
       </scripts>
     </scripts>
   </scripts>
   <fonts name="fonts">
     <font>fonts\fhuds</font>
+    <font>fonts\ftitle</font>
   </fonts>
   <objects name="objects">
     <objects name="level">
       <object>objects\obackground</object>
       <object>objects\owall</object>
       <object>objects\odoor</object>
+      <object>objects\ofade</object>
+      <object>objects\omenu</object>
     </objects>
     <objects name="parents">
       <object>objects\osolidpar</object>
@@ -92,6 +105,7 @@
       <object>objects\odash</object>
       <object>objects\oexp</object>
       <object>objects\ohealth</object>
+      <object>objects\ocamera</object>
     </objects>
     <objects name="enemys">
       <object>objects\oslime</object>
@@ -106,6 +120,7 @@
   </objects>
   <rooms name="rooms">
     <room>rooms\rhome</room>
+    <room>rooms\rmenu</room>
     <room>rooms\rhomeroom</room>
   </rooms>
   <help>

@@ -1,17 +1,16 @@
-///takedamage()
+///takedamage(dmg knockback)
+var dmg = argument0;
+var knockback = argument1;
 
 if state != hurtstate {
-    audio_emitter_pitch (audio_em, 1.6);
-    audio_emitter_gain (audio_em, 1.4);
-    audio_play_sound_on (audio_em, aOuch, false, 8);
     
-    image_blend = make_color_rgb (220, 150, 150);
-    vspd = -12;
-    hspd = sign (x - other.x) * 2;
+    image_blend = c_red;
+    vspd = sign (y - other.y) * knockback;
+    hspd = sign (x - other.x) * knockback;
     
     state = hurtstate;
-    move(oSolid);
-    if instance_exists (oPlayerStats) {
-        oPlayerStats.hp -= 1;
+    move(osolidpar);
+    if instance_exists (oplayerstats) {
+        oplayerstats.hp -= dmg;
     }
 }

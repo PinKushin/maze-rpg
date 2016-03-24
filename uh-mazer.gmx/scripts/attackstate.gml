@@ -8,19 +8,19 @@ switch (sprite_index)
 {
     case splayerdown: 
          sprite_index = splayerattackdown
-         break;
+    break;
     
     case splayerup:
          sprite_index = splayerattackup
-         break;
+    break;
     
     case splayerleft:
          sprite_index = splayerattackleft
-         break;
+    break;
     
     case splayerright:
          sprite_index = splayerattackright
-         break;
+    break;
 }
 if image_index >= 3 && attacked == false
 {
@@ -32,22 +32,22 @@ if image_index >= 3 && attacked == false
         case splayerattackdown:
              xx = x;
              yy = y + 14;
-             break;
+        break;
         
         case splayerattackup:
              xx = x;
              yy = y - 10;
-             break;
+        break;
         
         case splayerattackleft:
              xx = x - 10;
              yy = y + 2;
-             break;
+        break;
         
         case splayerattackright:
              xx = x + 10;
              yy = y + 2;
-             break;
+        break;
     }
     var damage = instance_create (xx, yy, opdamage);
     damage.creator = id;

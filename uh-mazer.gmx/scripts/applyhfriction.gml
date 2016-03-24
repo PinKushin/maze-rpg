@@ -1,9 +1,9 @@
 ///applyhfriction (amount)
-var amount = argument[0];
+var amount = argument0;
 
 if (hspd != 0) {
     if abs (hspd) - amount > 0 {
-        hspd = 0;
+        hspd -= amount * sign (hspd);
     }else{
         hspd = 0;
     }

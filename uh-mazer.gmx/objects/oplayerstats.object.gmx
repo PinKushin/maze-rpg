@@ -67,6 +67,17 @@ besttime = 0;
           <argument>
             <kind>1</kind>
             <string>///control the stats
+//Start the game
+var start = keyboard_check_pressed (vk_space);
+
+if gamepad_is_connected (0) {
+    start = gamepad_button_check_pressed (0, gp_start)
+}
+
+if start == true &amp;&amp; room == rmenu {
+    room_goto (rhome);
+}
+
 if hp &lt; 0 { hp = 0 }
 
 </string>
@@ -93,9 +104,12 @@ if hp &lt; 0 { hp = 0 }
             <kind>1</kind>
             <string>///Draw the Stats
 switch (room) {
+    case (rmenu):
+        
+    break;
     
     default:
-        draw_set_font (fhuds)
+        draw_set_font (fhuds);
         draw_set_halign (fa_left)
         draw_text_color (16, 16, "Health: " + string (hp) + "/" + string (maxhp), c_white, c_white, c_white, c_white, 1)
         draw_text_color (16, 32, "Stamina: " + string (stamina) + "/" + string (maxstamina),c_white, c_white, c_white, c_white, 1)
@@ -106,7 +120,7 @@ switch (room) {
         // Draw the timer
         draw_set_halign (fa_center);
         draw_text_color(view_wview[0] / 2, view_hview[0] - 16, "Time: "+string(floor(time/room_speed)), c_white, c_white, c_white, c_white, 1);
-        break;
+    break;
 }
 </string>
           </argument>
