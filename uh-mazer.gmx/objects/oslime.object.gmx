@@ -29,6 +29,8 @@
 depth = -y;
 image_speed = 0.1;
 
+xforce = 0
+yforce = 0
 hp = 3
 state = choose (slimemoveright, slimemoveleft, slimemoveup, slimemovedown);
 </string>

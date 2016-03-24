@@ -29,6 +29,7 @@
       <sprites name="mask">
         <sprite>sprites\splayermask</sprite>
       </sprites>
+      <sprite>sprites\scursor</sprite>
     </sprites>
     <sprites name="level">
       <sprite>sprites\scoin</sprite>
@@ -119,8 +120,8 @@
     </objects>
   </objects>
   <rooms name="rooms">
-    <room>rooms\rhome</room>
     <room>rooms\rmenu</room>
+    <room>rooms\rhome</room>
     <room>rooms\rhomeroom</room>
   </rooms>
   <help>
