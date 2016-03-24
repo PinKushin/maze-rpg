@@ -40,9 +40,6 @@
     <sprites name="fx">
       <sprite>sprites\sblood</sprite>
     </sprites>
-    <sprite>sprites\scaught</sprite>
-    <sprite>sprites\sprite27</sprite>
-    <sprite>sprites\sprite28</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bgrass</background>
@@ -65,6 +62,7 @@
     <scripts name="player states">
       <script>scripts\movestate.gml</script>
       <script>scripts\attackstate.gml</script>
+      <script>scripts\dashstate.gml</script>
     </scripts>
     <scripts name="enemys">
       <scripts name="slime">
@@ -75,6 +73,9 @@
       </scripts>
     </scripts>
   </scripts>
+  <fonts name="fonts">
+    <font>fonts\fhuds</font>
+  </fonts>
   <objects name="objects">
     <objects name="level">
       <object>objects\obackground</object>
@@ -89,6 +90,8 @@
       <object>objects\oplayer</object>
       <object>objects\oplayerstats</object>
       <object>objects\odash</object>
+      <object>objects\oexp</object>
+      <object>objects\ohealth</object>
     </objects>
     <objects name="enemys">
       <object>objects\oslime</object>
@@ -96,13 +99,10 @@
     <objects name="fx">
       <object>objects\oblood</object>
     </objects>
-    <object>objects\ocaught</object>
     <objects name="damage">
       <object>objects\opdamage</object>
       <object>objects\oedamage</object>
     </objects>
-    <object>objects\object13</object>
-    <object>objects\object14</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rhome</room>

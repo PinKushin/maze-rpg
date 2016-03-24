@@ -95,6 +95,7 @@ if hp &lt; 0 { hp = 0 }
 switch (room) {
     
     default:
+        draw_set_font (fhuds)
         draw_set_halign (fa_left)
         draw_text_color (16, 16, "Health: " + string (hp) + "/" + string (maxhp), c_white, c_white, c_white, c_white, 1)
         draw_text_color (16, 32, "Stamina: " + string (stamina) + "/" + string (maxstamina),c_white, c_white, c_white, c_white, 1)

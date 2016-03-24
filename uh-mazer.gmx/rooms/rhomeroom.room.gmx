@@ -26,9 +26,9 @@
     <showViews>0</showViews>
     <deleteUnderlyingObj>-1</deleteUnderlyingObj>
     <deleteUnderlyingTiles>-1</deleteUnderlyingTiles>
-    <page>1</page>
-    <xoffset>-80</xoffset>
-    <yoffset>-57</yoffset>
+    <page>0</page>
+    <xoffset>-99</xoffset>
+    <yoffset>-86</yoffset>
   </makerSettings>
   <backgrounds>
     <background visible="-1" foreground="0" name="bgrass" x="0" y="0" htiled="-1" vtiled="-1" hspeed="0" vspeed="0" stretch="0"/>
@@ -81,10 +81,8 @@
     <instance objName="owall" x="240" y="176" name="inst_FD5027D5" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="owall" x="240" y="0" name="inst_8F6F1DA9" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="owall" x="224" y="-16" name="inst_570B7047" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="odoor" x="160" y="224" name="inst_8B351846" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="object13" x="96" y="192" name="inst_A9ABFBAE" locked="0" code="" scaleX="-1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="object14" x="64" y="64" name="inst_DD4B6701" locked="0" code="" scaleX="-0.25" scaleY="0.25" colour="4294967295" rotation="0"/>
-    <instance objName="ocaught" x="144" y="48" name="inst_E0E683C0" locked="0" code="" scaleX="0.5" scaleY="0.5" colour="4294967295" rotation="0"/>
+    <instance objName="odoor" x="160" y="224" name="inst_8B351846" locked="0" code="newroom = rhome;&#xA;startx = 368;&#xA;starty = 432;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oslime" x="112" y="96" name="inst_92857820" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>
