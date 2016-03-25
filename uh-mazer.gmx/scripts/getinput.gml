@@ -10,6 +10,10 @@ attack = mouse_check_button_pressed (mb_left);
 attackreleased = mouse_check_button_released (mb_left);
 space = keyboard_check_pressed (vk_space);
 
+//get axis
+xaxis = (right - left);
+yaxis = (down-up);
+
 /*overide controls for a gamepad
 var gp_id = 0; //player one
 
