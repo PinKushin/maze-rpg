@@ -49,6 +49,7 @@
     <background>background\bgrass</background>
     <background>background\bstarsclose</background>
     <background>background\bstarsfar</background>
+    <background>background\btileset</background>
   </backgrounds>
   <paths name="paths"/>
   <scripts name="scripts">
