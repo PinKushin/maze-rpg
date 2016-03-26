@@ -73,6 +73,7 @@
       <script>scripts\dashstate.gml</script>
       <script>scripts\menustate.gml</script>
       <script>scripts\hurtstate.gml</script>
+      <script>scripts\exitstate.gml</script>
     </scripts>
     <scripts name="enemys">
       <scripts name="slime">
@@ -123,6 +124,13 @@
     <room>rooms\rmenu</room>
     <room>rooms\rhome</room>
     <room>rooms\rhomeroom</room>
+    <rooms name="room transition test">
+      <room>rooms\rcenter</room>
+      <room>rooms\rtop</room>
+      <room>rooms\rleft</room>
+      <room>rooms\rright</room>
+      <room>rooms\rbottom</room>
+    </rooms>
   </rooms>
   <help>
     <rtf>help.rtf</rtf>

@@ -28,7 +28,7 @@
             <string>///execute 
 var xto;
 var yto;
-var dis = 84;
+var dis = 80;
 
 move_towards_point (mouse_x, mouse_y, 0);//direcction to mouse
 

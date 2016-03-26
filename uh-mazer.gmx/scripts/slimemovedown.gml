@@ -10,4 +10,4 @@ if wallatbot || enemyatbot {
 image_yscale = 1;
 
 ///move the snake
-y += 1;
+y += spd;

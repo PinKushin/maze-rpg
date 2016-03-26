@@ -10,4 +10,4 @@ if wallatright || enemyatright {
 image_xscale = 1;
 
 ///move the snake
-x += 1;
+x += spd;

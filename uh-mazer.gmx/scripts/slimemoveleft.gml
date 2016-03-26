@@ -10,5 +10,5 @@ if wallatleft ||enemyatleft {
 image_xscale = -1;
 
 ///move the slime
-x += -1;
+x += -spd;
 

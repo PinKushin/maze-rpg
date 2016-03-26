@@ -29,8 +29,7 @@
 depth = -y;
 image_speed = 0.1;
 
-xforce = 0
-yforce = 0
+spd = 20 / room_speed
 hp = 3
 state = choose (slimemoveright, slimemoveleft, slimemoveup, slimemovedown);
 </string>
@@ -57,7 +56,6 @@ state = choose (slimemoveright, slimemoveleft, slimemoveup, slimemovedown);
             <kind>1</kind>
             <string>///create drop
 event_inherited ();
-
 instance_create (x, y, oexp);
 
 </string>
