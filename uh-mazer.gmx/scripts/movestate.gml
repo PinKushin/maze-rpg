@@ -1,22 +1,18 @@
 ///movestate()
 getinput();
 
-
-//get direction and length
-dir = point_direction (0, 0, xaxis, yaxis)
-if xaxis == 0 && yaxis == 0 {
+//get direction
+dir = point_direction (0, 0, hspddir, vspddir)
+//get length
+if hspddir == 0 && vspddir == 0 {
     len = 0;
 }else{
     len = spd;
 }
-
-//set hspd and yspd
-hspd = lengthdir_x (len, dir)
-vspd = lengthdir_y (len, dir)
 //move
-
 //horizontal
 if (right || left) {
+    hspd = lengthdir_x (spd, dir)
     hspd += (right-left) * acc;
     hspddir = right - left;
     
@@ -24,10 +20,11 @@ if (right || left) {
     if hspd < -spd { hspd = -spd;}
 }else{
     //friction
-    applyhfriction(fric)
+    applyhfriction(fric);
 }
 ///vertical
 if (up || down) {
+    vspd = lengthdir_y (spd, dir)
     vspd += (down - up) * acc;
     vspddir = down - up;
     
@@ -35,7 +32,7 @@ if (up || down) {
     if vspd < -spd { vspd = -spd;}
 }else{
     //friction
-    applyvfriction (fric)
+    applyvfriction (fric);
 }
 
 //change sprites
@@ -53,13 +50,13 @@ if attack {
 if dash && oplayerstats.stamina >= dashcost {
     oplayerstats.stamina -= dashcost
     state = dashstate;
-    alarm[0] = room_speed / 2;
-    alarm[1] = room_speed / 2;
+    alarm[DASH] = room_speed / 2;
+    alarm[STAMINA] = room_speed / 2;
 }
 
 //regen stamina
 if instance_exists (oplayerstats) {
-    if oplayerstats.stamina < oplayerstats.maxstamina && alarm[1] <= 0 {
+    if oplayerstats.stamina < oplayerstats.maxstamina && alarm[STAMINA] <= 0 {
         oplayerstats.stamina += 1;
     }
 }

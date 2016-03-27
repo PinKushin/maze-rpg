@@ -634,8 +634,11 @@
     <option_xbone_title_id></option_xbone_title_id>
   </Options>
   <ConfigConstants>
-    <constants number="1">
+    <constants number="4">
       <constant name="STALL">0</constant>
+      <constant name="DASH">0</constant>
+      <constant name="STAMINA">1</constant>
+      <constant name="DASH1F">2</constant>
     </constants>
   </ConfigConstants>
 </Config>

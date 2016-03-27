@@ -23,6 +23,7 @@
     </sprites>
     <sprites name="helpers">
       <sprite>sprites\sdamage</sprite>
+      <sprite>sprites\spdamage</sprite>
       <sprite>sprites\splayerstats</sprite>
       <sprite>sprites\sbackground</sprite>
       <sprite>sprites\scamhelper</sprite>
@@ -46,10 +47,12 @@
     </sprites>
   </sprites>
   <backgrounds name="background">
-    <background>background\bgrass</background>
     <background>background\bstarsclose</background>
     <background>background\bstarsfar</background>
-    <background>background\btileset</background>
+    <backgrounds name="enviroment">
+      <background>background\bgrass</background>
+      <background>background\btileset</background>
+    </backgrounds>
   </backgrounds>
   <paths name="paths"/>
   <scripts name="scripts">
