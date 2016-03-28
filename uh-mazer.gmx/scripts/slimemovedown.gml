@@ -10,5 +10,5 @@ stayinsideroom (slimemoveright, slimemoveleft, slimemovedown, slimemoveup);
 ///control sprite
 image_yscale = 1;
 
-///move the snake
+///move the slime
 y += spd;

@@ -7,6 +7,7 @@ if place_meeting (x + hspd, y, collision_object){
         x += sign (hspd);
     }
     hspd = -(hspd / 2);
+    if abs (hspd) < 2 {hspd = 0;}
 }
 x += hspd;
 

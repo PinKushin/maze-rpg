@@ -50,7 +50,7 @@ hp = 3
           <argument>
             <kind>1</kind>
             <string>///create blood
-repeat (irandom_range(4, 7)) {
+repeat (irandom_range(10, 20)) {
     //create within an area
     var randx = irandom_range (-4, 4);
     var randy = irandom_range (-4, 4);

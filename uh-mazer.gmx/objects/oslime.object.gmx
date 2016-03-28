@@ -29,8 +29,9 @@
 depth = -y;
 image_speed = 0.1;
 
-spd = 20 / room_speed
-hp = 3
+spd = 20 / room_speed;
+maxspd = spd
+hp = 3;
 state = choose (slimemoveright, slimemoveleft, slimemoveup, slimemovedown);
 </string>
           </argument>
@@ -104,7 +105,11 @@ instance_create (x, y, oexp);
           <argument>
             <kind>1</kind>
             <string>///execute state
+event_inherited ()
 script_execute (state)
+show_debug_message (spd)
+if spd &gt; maxspd {spd -= sign(spd)}
+if spd &lt; -maxspd {spd -= sign(spd)}
 </string>
           </argument>
         </arguments>
@@ -133,10 +138,8 @@ if instance_exists (other) {
         var dir = point_direction (other.x, other.y, x, y);
         var xdir = lengthdir_x (1, dir);
         var ydir = lengthdir_y (1, dir);
-        var dmg = instance_create (other.x + xdir, other.y + ydir, oedamage)
-        with other {
-            takedamage(1, 5)
-        }
+        var damage = instance_create (other.x + xdir, other.y + ydir, oedamage);
+        damage.creator = id;
         state = slimestallstate;
         alarm[STALL] = room_speed; //stall alarm set to 1 second
     }

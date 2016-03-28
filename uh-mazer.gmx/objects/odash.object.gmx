@@ -53,7 +53,7 @@ image_alpha = 0.5
             <kind>1</kind>
             <string>///fade
 if image_alpha &gt; 0 {
-    image_alpha -= 0.1;
+    image_alpha -= 0.05;
 }else{
     instance_destroy ();
 }

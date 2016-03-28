@@ -1,8 +1,8 @@
-///DebugLog(string,channel)
-with oGame {
+///debuglog(string,channel)
+with oplayer {
 
     //Define what channel we're listening to 
-    DebugChannel = "completion"
+    DebugChannel = "hspd"
     
     //Turn what we were given into text
     var DebugString = string(argument0);//,18,6);

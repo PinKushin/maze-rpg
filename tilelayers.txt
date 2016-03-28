@@ -1,0 +1,2 @@
+1000000 = floor
+999999 = paths and grass

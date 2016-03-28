@@ -9,4 +9,4 @@ if hspd == 0 && vspd == 0 {
         game_restart ();
     }
 }
-damagebounce (osolidpar)
+animatesprite (0.2, splayerright, splayerup, splayerleft, splayerdown)

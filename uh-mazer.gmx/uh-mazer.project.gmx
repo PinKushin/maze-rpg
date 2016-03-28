@@ -33,11 +33,17 @@
       <sprite>sprites\scursor</sprite>
     </sprites>
     <sprites name="level">
-      <sprite>sprites\scoin</sprite>
-      <sprite>sprites\sWall</sprite>
-      <sprite>sprites\sdoor</sprite>
       <sprite>sprites\sdialog</sprite>
-      <sprite>sprites\ssign</sprite>
+      <sprites name="enviroment">
+        <sprite>sprites\ssign</sprite>
+        <sprites name="placeholder">
+          <sprite>sprites\sdoor</sprite>
+          <sprite>sprites\sWall</sprite>
+        </sprites>
+      </sprites>
+      <sprites name="items">
+        <sprite>sprites\scoin</sprite>
+      </sprites>
     </sprites>
     <sprites name="enemys">
       <sprite>sprites\sslime</sprite>
@@ -53,24 +59,26 @@
       <background>background\bgrass</background>
       <background>background\btileset</background>
     </backgrounds>
+    <background>background\bhome</background>
   </backgrounds>
   <paths name="paths"/>
   <scripts name="scripts">
     <scripts name="helper">
-      <script>scripts\move.gml</script>
-      <script>scripts\applyhfriction.gml</script>
-      <script>scripts\applyvfriction.gml</script>
-      <script>scripts\getinput.gml</script>
-      <scripts name="debug">
-        <script>scripts\DebugLog.gml</script>
-        <script>scripts\DebugLogDraw.gml</script>
-        <script>scripts\DebugLogInitialise.gml</script>
+      <scripts name="movement">
+        <script>scripts\applyhfriction.gml</script>
+        <script>scripts\applyvfriction.gml</script>
+        <script>scripts\move.gml</script>
+        <script>scripts\getinput.gml</script>
+        <script>scripts\facing.gml</script>
+        <script>scripts\animatesprite.gml</script>
       </scripts>
-      <script>scripts\changesprite.gml</script>
-      <script>scripts\death.gml</script>
-      <script>scripts\takedamage.gml</script>
-      <script>scripts\damagebounce.gml</script>
-      <script>scripts\stayinsideroom.gml</script>
+      <scripts name="knockback">
+        <script>scripts\damagebounce.gml</script>
+      </scripts>
+      <scripts name="game conditions">
+        <script>scripts\death.gml</script>
+        <script>scripts\takedamage.gml</script>
+      </scripts>
     </scripts>
     <scripts name="player states">
       <script>scripts\movestate.gml</script>
@@ -78,7 +86,6 @@
       <script>scripts\dashstate.gml</script>
       <script>scripts\menustate.gml</script>
       <script>scripts\hurtstate.gml</script>
-      <script>scripts\exitstate.gml</script>
     </scripts>
     <scripts name="enemys">
       <scripts name="slime">
@@ -88,31 +95,39 @@
         <script>scripts\slimemoveleft.gml</script>
         <script>scripts\slimestallstate.gml</script>
       </scripts>
+      <scripts name="Helpers">
+        <script>scripts\stayinsideroom.gml</script>
+      </scripts>
     </scripts>
   </scripts>
   <fonts name="fonts">
     <font>fonts\fhuds</font>
     <font>fonts\ftitle</font>
+    <fonts name="debug">
+      <font>fonts\fdebug</font>
+    </fonts>
   </fonts>
   <objects name="objects">
     <objects name="level">
-      <object>objects\obackground</object>
-      <object>objects\owall</object>
-      <object>objects\odoor</object>
-      <object>objects\ofade</object>
-      <object>objects\omenu</object>
+      <objects name="structure">
+        <object>objects\owall</object>
+        <object>objects\odoor</object>
+      </objects>
     </objects>
     <objects name="parents">
       <object>objects\osolidpar</object>
       <object>objects\oenemypar</object>
     </objects>
-    <objects name="Player">
+    <objects name="player">
       <object>objects\oplayer</object>
       <object>objects\oplayerstats</object>
-      <object>objects\odash</object>
-      <object>objects\oexp</object>
-      <object>objects\ohealth</object>
-      <object>objects\ocamera</object>
+      <objects name="pickups">
+        <object>objects\oexp</object>
+        <object>objects\ohealth</object>
+      </objects>
+      <objects name="powerups">
+        <object>objects\odash</object>
+      </objects>
     </objects>
     <objects name="enemys">
       <object>objects\oslime</object>
@@ -124,12 +139,18 @@
       <object>objects\opdamage</object>
       <object>objects\oedamage</object>
     </objects>
+    <objects name="game">
+      <object>objects\obackground</object>
+      <object>objects\ofade</object>
+      <object>objects\omenu</object>
+      <object>objects\ocamera</object>
+    </objects>
   </objects>
   <rooms name="rooms">
-    <room>rooms\room9</room>
+    <room>rooms\rtestai</room>
+    <room>rooms\rmenu</room>
     <room>rooms\rhome</room>
     <room>rooms\rhomeroom</room>
-    <room>rooms\rmenu</room>
     <rooms name="room transition test">
       <room>rooms\rcenter</room>
       <room>rooms\rtop</room>

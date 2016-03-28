@@ -10,6 +10,7 @@ stayinsideroom (slimemoveright, slimemoveleft, slimemovedown, slimemoveup);
 ///control sprite
 image_xscale = -1;
 
+
 ///move the slime
-x += -spd;
+x -= spd;
 

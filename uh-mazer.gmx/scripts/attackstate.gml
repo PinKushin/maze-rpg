@@ -22,7 +22,7 @@ switch (sprite_index)
          sprite_index = splayerattackright
     break;
 }
-if image_index >= 3 && attacked == false
+if image_index >= 3 && attacked == false //create dmg object on the correct frame
 {
     var xx = 0;
     var yy = 0;
@@ -51,6 +51,6 @@ if image_index >= 3 && attacked == false
     }
     var damage = instance_create (xx, yy, opdamage);
     damage.creator = id;
-    damage.damage = oplayerstats.attack;
+    damage.dmg = oplayerstats.attack;
     attacked = true;
 }
