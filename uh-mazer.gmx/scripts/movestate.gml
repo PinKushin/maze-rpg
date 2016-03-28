@@ -3,8 +3,12 @@ getinput();
 
 //get direction
 dir = point_direction (0, 0, hspddir, vspddir)
+xdir = point_direction (0, 0, hspddir, 0)
+vdir = point_direction (0, 0, 0, vspddir)
 dxspd = lengthdir_x (spd, dir)
 dyspd = lengthdir_y (spd, dir)
+prevx = x
+prevy = y
 //get length
 if hspddir == 0 && vspddir == 0 {
     len = 0;
@@ -15,10 +19,10 @@ if hspddir == 0 && vspddir == 0 {
 //horizontal
 if (right || left) {
     hspd += (right-left) * acc;
-    hspddir = right - left;
     
     if hspd > dxspd { hspd = dxspd;}
     if hspd < -dxspd { hspd = dxspd;}
+    //show_debug_message (hspd)
 }else{
     //friction
     applyhfriction(fric);
@@ -26,15 +30,14 @@ if (right || left) {
 ///vertical
 if (up || down) {
     vspd += (down - up) * acc;
-    vspddir = down - up;
     
     if vspd > dyspd { vspd = dyspd;}
     if vspd < -dyspd { vspd = dyspd;}
+    //show_debug_message (vspd)
 }else{
     //friction
     applyvfriction (fric);
 }
-
 //change sprites
 changesprite (0.2, splayerright, splayerleft, splayerup, splayerdown)
 

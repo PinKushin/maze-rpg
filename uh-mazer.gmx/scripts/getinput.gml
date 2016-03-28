@@ -10,4 +10,5 @@ dashstop = keyboard_check_released (vk_shift);
 attack = mouse_check_button_pressed (mb_left);
 attackreleased = mouse_check_button_released (mb_left);
 space = keyboard_check_pressed (vk_space);
-
+hspddir = right - left;
+vspddir = down - up;

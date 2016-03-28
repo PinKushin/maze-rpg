@@ -30,7 +30,7 @@ depth = -y
 image_speed = 0;
 
 spd = 42 / room_speed;
-acc = 8 / room_speed;
+acc = 2 / room_speed;
 hspd = 0;
 vspd = 0;
 dxspd = 0;
@@ -42,7 +42,7 @@ dir = 0;
 state = movestate;
 attacked = false;
 face = 0;
-fric = 0.15;
+fric = 1.5 / room_speed;
 dashspd = spd * 1.5;
 dashcost = 1;
 getinput();
