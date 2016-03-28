@@ -3,18 +3,9 @@ getinput();
 
 //get direction
 dir = point_direction (0, 0, hspddir, vspddir)
-xdir = point_direction (0, 0, hspddir, 0)
-vdir = point_direction (0, 0, 0, vspddir)
 dxspd = lengthdir_x (spd, dir)
 dyspd = lengthdir_y (spd, dir)
-prevx = x
-prevy = y
-//get length
-if hspddir == 0 && vspddir == 0 {
-    len = 0;
-}else{
-    len = spd;
-}
+
 //move
 //horizontal
 if (right || left) {

@@ -6,6 +6,7 @@ if wallatleft ||enemyatleft {
     state = choose (slimemoveright, slimemoveup, slimemovedown);
 }
 
+stayinsideroom (slimemoveright, slimemoveleft, slimemovedown, slimemoveup);
 ///control sprite
 image_xscale = -1;
 

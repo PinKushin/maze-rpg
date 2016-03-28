@@ -7,4 +7,5 @@ if (vspd != 0) {
     }else{
     vspd = 0;
     }
+    //show_debug_message(vspd);
 }

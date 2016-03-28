@@ -6,6 +6,7 @@ if wallatbot || enemyatbot {
     state = choose (slimemoveup, slimemoveright, slimemoveleft);
 }
 
+stayinsideroom (slimemoveright, slimemoveleft, slimemovedown, slimemoveup);
 ///control sprite
 image_yscale = 1;
 

@@ -70,6 +70,7 @@
       <script>scripts\death.gml</script>
       <script>scripts\takedamage.gml</script>
       <script>scripts\damagebounce.gml</script>
+      <script>scripts\stayinsideroom.gml</script>
     </scripts>
     <scripts name="player states">
       <script>scripts\movestate.gml</script>
@@ -125,9 +126,10 @@
     </objects>
   </objects>
   <rooms name="rooms">
-    <room>rooms\rmenu</room>
+    <room>rooms\room9</room>
     <room>rooms\rhome</room>
     <room>rooms\rhomeroom</room>
+    <room>rooms\rmenu</room>
     <rooms name="room transition test">
       <room>rooms\rcenter</room>
       <room>rooms\rtop</room>
