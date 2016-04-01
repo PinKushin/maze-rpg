@@ -1,4 +1,4 @@
-///applyvfriction (amount)
+///applyvfriction(amount)
 var amount = argument[0];
 
 if (vspd != 0) {

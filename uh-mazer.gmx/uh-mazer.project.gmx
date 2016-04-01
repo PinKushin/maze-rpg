@@ -47,6 +47,7 @@
     </sprites>
     <sprites name="enemys">
       <sprite>sprites\sslime</sprite>
+      <sprite>sprites\shoming</sprite>
     </sprites>
     <sprites name="fx">
       <sprite>sprites\sblood</sprite>
@@ -77,7 +78,6 @@
       </scripts>
       <scripts name="game conditions">
         <script>scripts\death.gml</script>
-        <script>scripts\takedamage.gml</script>
       </scripts>
     </scripts>
     <scripts name="player states">
@@ -94,9 +94,16 @@
         <script>scripts\slimemoveup.gml</script>
         <script>scripts\slimemoveleft.gml</script>
         <script>scripts\slimestallstate.gml</script>
+        <script>scripts\slimestayinsideroom.gml</script>
       </scripts>
-      <scripts name="Helpers">
-        <script>scripts\stayinsideroom.gml</script>
+      <scripts name="helpers">
+        <script>scripts\lineofsite.gml</script>
+        <script>scripts\checkforplayer.gml</script>
+      </scripts>
+      <scripts name="homingenemy">
+        <script>scripts\homingidlestate.gml</script>
+        <script>scripts\homingchasestate.gml</script>
+        <script>scripts\homingstallstate.gml</script>
       </scripts>
     </scripts>
   </scripts>
@@ -131,6 +138,7 @@
     </objects>
     <objects name="enemys">
       <object>objects\oslime</object>
+      <object>objects\ohomingenemy</object>
     </objects>
     <objects name="fx">
       <object>objects\oblood</object>
@@ -147,16 +155,20 @@
     </objects>
   </objects>
   <rooms name="rooms">
-    <room>rooms\rtestai</room>
     <room>rooms\rmenu</room>
     <room>rooms\rhome</room>
     <room>rooms\rhomeroom</room>
-    <rooms name="room transition test">
-      <room>rooms\rcenter</room>
-      <room>rooms\rtop</room>
-      <room>rooms\rleft</room>
-      <room>rooms\rright</room>
-      <room>rooms\rbottom</room>
+    <rooms name="test">
+      <rooms name="enemys">
+        <room>rooms\rtestai</room>
+      </rooms>
+      <rooms name="room transition test">
+        <room>rooms\rcenter</room>
+        <room>rooms\rtop</room>
+        <room>rooms\rleft</room>
+        <room>rooms\rright</room>
+        <room>rooms\rbottom</room>
+      </rooms>
     </rooms>
   </rooms>
   <help>

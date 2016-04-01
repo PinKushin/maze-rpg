@@ -1,4 +1,4 @@
-///applyhfriction (amount)
+///applyhfriction(amount)
 var amount = argument0;
 
 if (hspd != 0) {

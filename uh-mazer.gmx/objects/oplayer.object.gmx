@@ -41,8 +41,8 @@ len = 0;
 dir = 0;
 state = movestate;
 attacked = false;
-face = 0;
-fric = 2.2 / room_speed;
+face = RIGHT;//0
+fric = 4 / room_speed;
 dashspd = spd * 1.5;
 dashcost = 1;
 
@@ -127,6 +127,7 @@ script_execute (state);
 move(osolidpar)
 //show_debug_message (hspd)
 //show_debug_message (vspd)
+//show_debug_message (acc)
 </string>
           </argument>
         </arguments>

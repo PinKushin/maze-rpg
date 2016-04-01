@@ -82,12 +82,13 @@ if other.id != creator {
     oplayerstats.hp -= dmg;
     
     //knockback
-    var dir = point_direction (x, y, other.x, other.y);
+    var dir = point_direction (creator.x, creator.y, other.x, other.y);
     var xknock = lengthdir_x (knockback, dir);
     var yknock = lengthdir_y (knockback, dir);
     with other {
-        hspd += xknock
-        vspd += yknock
+        hspd += xknock;
+        vspd += yknock;
+        state = hurtstate;
     }
 }
 </string>

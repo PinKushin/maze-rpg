@@ -16,19 +16,19 @@ if hspddir == 0 && vspddir == 0 {
 
 //move
 //horizontal
-if (right || left) {
-    hspd += (right-left) * acc;
+if hspddir != 0 {
+    hspd += hspddir * spd;
     
     if hspd > dxspd { hspd = dxspd;}
     if hspd < -dxspd { hspd = dxspd;}
     //show_debug_message (hspd)
 }else{
     //friction
-    applyhfriction(fric);
+    applyhfriction (fric);
 }
 ///vertical
-if (up || down) {
-    vspd += (down - up) * acc;
+if vspddir != 0 {
+    vspd += vspddir * spd;
     
     if vspd > dyspd { vspd = dyspd;}
     if vspd < -dyspd { vspd = dyspd;}
@@ -53,7 +53,7 @@ if dash && oplayerstats.stamina >= dashcost {
     oplayerstats.stamina -= dashcost
     state = dashstate;
     alarm[DASH] = room_speed / 2;
-    alarm[STAMINA] = room_speed / 2;
+    alarm[STAMINA] = room_speed * 3;
 }
 
 //regen stamina

@@ -27,7 +27,7 @@
             <kind>1</kind>
             <string>///Initialise Damage object
 dmg = 1;
-knockback = 3;
+knockback = 10;
 alarm[0] = 1;
 creator = noone;
 </string>
@@ -81,12 +81,14 @@ if other.id != creator {
     other.hp -= dmg;
     
     //knockback
-    var dir = point_direction (x, y, other.x, other.y);
-    var xknock = lengthdir_x (knockback, dir);
-    var yknock = lengthdir_y (knockback, dir);
-    with other {
-        spd += xknock
-        spd += yknock
+    if instance_exists (oplayer){
+        var dir = point_direction (oplayer.x, oplayer.y, other.x, other.y);
+        var xknock = lengthdir_x (knockback, dir);
+        var yknock = lengthdir_y (knockback, dir);
+        with other {
+            x += xknock
+            y += yknock
+        }
     }
 }
 </string>

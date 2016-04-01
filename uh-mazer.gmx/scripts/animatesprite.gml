@@ -3,7 +3,6 @@ image_speed = argument0;
 if len == 0 {
     image_index = 0
 }
-
 switch face {
     case RIGHT:
          sprite_index = argument1

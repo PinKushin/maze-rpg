@@ -8,7 +8,7 @@ if place_meeting (x + hspd, y, collision_object){
     }
     hspd = 0;
 }
-x +=hspd;
+x += hspd;
 
 
 //Vertical collisions
