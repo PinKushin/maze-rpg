@@ -131,6 +131,8 @@
       <script>scripts\itempickup.gml</script>
       <script>scripts\itemdrop.gml</script>
       <script>scripts\itemcheck.gml</script>
+      <script>scripts\itempickupslot.gml</script>
+      <script>scripts\itemdropslot.gml</script>
     </scripts>
   </scripts>
   <fonts name="fonts">
@@ -183,7 +185,11 @@
       <object>objects\ofade</object>
       <object>objects\omenu</object>
       <object>objects\ocamera</object>
+    </objects>
+    <objects name="inventory">
       <object>objects\oinventory</object>
+      <object>objects\omouseitem</object>
+      <object>objects\oinvbutton</object>
     </objects>
   </objects>
   <rooms name="rooms">

@@ -39,7 +39,13 @@ maxitems = 5;
 
 for (var i = 0; i &lt; maxitems; i++) {
     global.inventory[i] = -1;
+    button[i] = instance_create (0, 0, oinvbutton)
+    button[i].slot = i;
 }
+
+globalvar mouseitem;
+mouseitem = -1;
+instance_create(0, 0, omouseitem);
 
 </string>
           </argument>
@@ -77,10 +83,12 @@ if showinv {
    draw_set_alpha (1);
    
    for (var i = 0; i &lt; maxitems; i++){
-       draw_sprite (sborder, 0, x1 + 24 + (i * 24), y2 - 24)
-       if global.inventory[i] != -1 {
-          draw_sprite (sitems, global.inventory[i], x1 + 24 + (i * 24), y2 - 24)
-       }
+       var ix = x1 + 24 + (i * 24);
+       var iy = y2 - 24;
+       
+       draw_sprite (sborder, 0, ix, iy);
+       button[i].x = ix + 6;
+       button[i].y = iy + 6;
    }
 }
 </string>
@@ -88,7 +96,7 @@ if showinv {
         </arguments>
       </action>
     </event>
-    <event eventtype="9" enumb="69">
+    <event eventtype="9" enumb="13">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -105,13 +113,7 @@ if showinv {
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>var addpotion;
-addpotion = itempickup(2);
-
-if addpotion == 0 {
-   //inventory full
-   show_message ("inventroy full")
-}
+            <string>itempickup(1);
 </string>
           </argument>
         </arguments>
