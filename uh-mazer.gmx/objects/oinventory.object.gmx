@@ -33,7 +33,7 @@ inventory items
 2 = magic potion
 */
 globalvar showinv; //display inventory
-showinv = true;
+showinv = false;
 globalvar maxitems;; //total slots
 maxitems = 5;
 

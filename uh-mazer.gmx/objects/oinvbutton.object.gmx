@@ -28,25 +28,26 @@
             <string>///draw items
 var item = global.inventory[slot];
 var click = mouse_check_button_pressed (mb_left);
-
-if abs (mouse_x - x - 1) &lt; 6 &amp;&amp; abs (mouse_y - y - 1) &lt; 6 {
-   draw_set_color (c_gray);
-   draw_set_alpha (0.8);
-   draw_rectangle (x - 4, y - 4, x + 7, y + 7, 0);
-   if click {
-      if item != -1 {
-         itemdropslot(slot);
-      }
-      if mouseitem != -1 {
-         itempickupslot (mouseitem, slot)
-      }
-      mouseitem = item;
-   }
-}
-draw_set_color(c_white);
-draw_set_alpha(1);
-if item != -1 {
-   draw_sprite (sitems, item, x + 2, y + 2);
+if showinv = true {
+    if abs (mouse_x - x - 1) &lt; 6 &amp;&amp; abs (mouse_y - y - 1) &lt; 6 {
+       draw_set_color (c_gray);
+       draw_set_alpha (0.8);
+       draw_rectangle (x - 4, y - 4, x + 7, y + 7, 0);
+       if click {
+          if item != -1 {
+             itemdropslot(slot);
+          }
+          if mouseitem != -1 {
+             itempickupslot (mouseitem, slot)
+          }
+          mouseitem = item;
+       }
+    }
+    draw_set_color(c_white);
+    draw_set_alpha(1);
+    if item != -1 {
+       draw_sprite (sitems, item, x + 2, y + 2);
+    }
 }
 </string>
           </argument>

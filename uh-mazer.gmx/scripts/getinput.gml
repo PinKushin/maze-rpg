@@ -9,6 +9,7 @@ dash = keyboard_check (vk_shift);
 dashstop = keyboard_check_released (vk_shift);
 attack = keyboard_check_pressed(vk_space);
 attackreleased = keyboard_check_released (vk_space);
+pause = keyboard_check_pressed (vk_escape);
 //space = keyboard_check_pressed (vk_space);
 hspddir = right - left;
 vspddir = down - up;

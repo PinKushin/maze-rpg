@@ -121,6 +121,13 @@ state = movestate;
             <string>///control states
 depth = -y
 getinput();
+if pause {
+   if showinv = false {
+      showinv = true;
+   }else{
+      showinv = false;
+   }
+}
 
 script_execute (state);
 
