@@ -20,7 +20,7 @@ global.roombottom = rbottom</code>
   <makerSettings>
     <isSet>-1</isSet>
     <w>1024</w>
-    <h>609</h>
+    <h>699</h>
     <showGrid>-1</showGrid>
     <showObjects>-1</showObjects>
     <showTiles>-1</showTiles>
@@ -29,9 +29,9 @@ global.roombottom = rbottom</code>
     <showViews>0</showViews>
     <deleteUnderlyingObj>0</deleteUnderlyingObj>
     <deleteUnderlyingTiles>-1</deleteUnderlyingTiles>
-    <page>0</page>
-    <xoffset>355</xoffset>
-    <yoffset>569</yoffset>
+    <page>4</page>
+    <xoffset>-36</xoffset>
+    <yoffset>-42</yoffset>
   </makerSettings>
   <backgrounds>
     <background visible="-1" foreground="0" name="bhome" x="0" y="0" htiled="-1" vtiled="-1" hspeed="0" vspeed="0" stretch="0"/>
@@ -55,27 +55,12 @@ global.roombottom = rbottom</code>
   </views>
   <instances>
     <instance objName="oplayer" x="368" y="432" name="inst_C14FF991" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="oslime" x="816" y="448" name="inst_E453DC3E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="oslime" x="656" y="352" name="inst_1E3D07CF" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="oslime" x="576" y="352" name="inst_4C4EA0CE" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="oslime" x="672" y="464" name="inst_C466D94F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="oslime" x="560" y="496" name="inst_A181F2FD" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="oslime" x="576" y="432" name="inst_724902A7" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="oslime" x="656" y="384" name="inst_069B3000" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="oslime" x="752" y="352" name="inst_C6BB141C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="oslime" x="800" y="432" name="inst_92D94369" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="oslime" x="832" y="432" name="inst_D5C4965C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="owall" x="128" y="256" name="inst_730CC4AB" locked="0" code="" scaleX="6.70967721939087" scaleY="0.5" colour="4294967295" rotation="0"/>
     <instance objName="owall" x="336" y="256" name="inst_5AE96EDC" locked="0" code="" scaleX="0.5" scaleY="6" colour="4294967295" rotation="0"/>
     <instance objName="owall" x="128" y="432" name="inst_122103D1" locked="0" code="" scaleX="5" scaleY="0.5" colour="4294967295" rotation="0"/>
-    <instance objName="oslime" x="224" y="320" name="inst_74AAA5EA" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="oslime" x="256" y="320" name="inst_FD97E21B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="oslime" x="256" y="352" name="inst_CC190E54" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="oslime" x="224" y="352" name="inst_C244AFA3" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="owall" x="128" y="256" name="inst_87F56D84" locked="0" code="" scaleX="0.5" scaleY="6" colour="4294967295" rotation="0"/>
     <instance objName="owall" x="320" y="432" name="inst_03E3AD5B" locked="0" code="" scaleX="1" scaleY="0.5" colour="4294967295" rotation="0"/>
-    <instance objName="ohomingenemy" x="304" y="336" name="inst_353F53B0" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="ohomingenemy" x="240" y="384" name="inst_633DA530" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oinventory" x="320" y="144" name="inst_57C91362" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>

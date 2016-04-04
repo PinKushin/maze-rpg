@@ -4,10 +4,20 @@
     <Config>Configs\Default</Config>
   </Configs>
   <NewExtensions/>
-  <sounds name="sound"/>
+  <sounds name="sound">
+    <sounds name="music">
+      <sound>sound\areturnhome</sound>
+      <sound>sound\afootrace</sound>
+      <sound>sound\aairvillage</sound>
+      <sound>sound\aredruin</sound>
+    </sounds>
+    <sounds name="sfx">
+      <sound>sound\aexplosion</sound>
+      <sound>sound\aselect</sound>
+      <sound>sound\ahurt</sound>
+    </sounds>
+  </sounds>
   <sprites name="sprites">
-    <sprite>sprites\sexpr</sprite>
-    <sprite>sprites\shealth</sprite>
     <sprites name="player">
       <sprite>sprites\splayershadow</sprite>
       <sprite>sprites\splayerup</sprite>
@@ -26,11 +36,14 @@
       <sprite>sprites\spdamage</sprite>
       <sprite>sprites\splayerstats</sprite>
       <sprite>sprites\sbackground</sprite>
+      <sprite>sprites\sgame</sprite>
+      <sprite>sprites\sinventory</sprite>
       <sprite>sprites\scamhelper</sprite>
       <sprites name="mask">
         <sprite>sprites\splayermask</sprite>
       </sprites>
       <sprite>sprites\scursor</sprite>
+      <sprite>sprites\nosprite</sprite>
     </sprites>
     <sprites name="level">
       <sprite>sprites\sdialog</sprite>
@@ -41,9 +54,6 @@
           <sprite>sprites\sWall</sprite>
         </sprites>
       </sprites>
-      <sprites name="items">
-        <sprite>sprites\scoin</sprite>
-      </sprites>
     </sprites>
     <sprites name="enemys">
       <sprite>sprites\sslime</sprite>
@@ -51,6 +61,12 @@
     </sprites>
     <sprites name="fx">
       <sprite>sprites\sblood</sprite>
+    </sprites>
+    <sprites name="items">
+      <sprite>sprites\ssword</sprite>
+      <sprite>sprites\shealth</sprite>
+      <sprite>sprites\sexp</sprite>
+      <sprite>sprites\smagic</sprite>
     </sprites>
   </sprites>
   <backgrounds name="background">
@@ -78,6 +94,9 @@
       </scripts>
       <scripts name="game conditions">
         <script>scripts\death.gml</script>
+      </scripts>
+      <scripts name="drawing">
+        <script>scripts\drawshadow.gml</script>
       </scripts>
     </scripts>
     <scripts name="player states">
@@ -124,16 +143,21 @@
     <objects name="parents">
       <object>objects\osolidpar</object>
       <object>objects\oenemypar</object>
+      <object>objects\oitempar</object>
     </objects>
     <objects name="player">
       <object>objects\oplayer</object>
       <object>objects\oplayerstats</object>
       <objects name="pickups">
         <object>objects\oexp</object>
-        <object>objects\ohealth</object>
       </objects>
       <objects name="powerups">
         <object>objects\odash</object>
+      </objects>
+      <objects name="items">
+        <object>objects\osword</object>
+        <object>objects\ohealthpotion</object>
+        <object>objects\omagicpotion</object>
       </objects>
     </objects>
     <objects name="enemys">
@@ -152,6 +176,7 @@
       <object>objects\ofade</object>
       <object>objects\omenu</object>
       <object>objects\ocamera</object>
+      <object>objects\oinventory</object>
     </objects>
   </objects>
   <rooms name="rooms">
