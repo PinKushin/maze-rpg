@@ -121,9 +121,9 @@ switch (room) {
     default:
         draw_set_font (fhuds);
         draw_set_halign (fa_left)
-        draw_text_color (16, 16, "Health: " + string (hp) + "/" + string (maxhp), c_white, c_white, c_white, c_white, 1)
-        draw_text_color (16, 32, "Stamina: " + string (stamina) + "/" + string (maxstamina),c_white, c_white, c_white, c_white, 1)
-        draw_text_color (16, 48, "Level: " + string (level), c_white, c_white, c_white, c_white, 1)
+        draw_text_color (16, 16+16, "Health: " + string (hp) + "/" + string (maxhp), c_white, c_white, c_white, c_white, 1)
+        draw_text_color (16, 32+16, "Stamina: " + string (stamina) + "/" + string (maxstamina),c_white, c_white, c_white, c_white, 1)
+        draw_text_color (16, 48+16, "Level: " + string (level), c_white, c_white, c_white, c_white, 1)
         
         //add to the time
         time += 1

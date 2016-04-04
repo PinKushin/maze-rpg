@@ -3,8 +3,8 @@
   <spriteName>sinventory</spriteName>
   <solid>0</solid>
   <visible>-1</visible>
-  <depth>-999</depth>
-  <persistent>0</persistent>
+  <depth>-1000</depth>
+  <persistent>-1</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
@@ -25,20 +25,22 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///initialize inventory values
-totalslots = 16;
-curslot = 0;
+            <string>///Initialise inventory variables
+/*
+inventory items
+0 = sword
+1 = health potion
+2 = magic potion
+*/
+globalvar showinv; //display inventory
+showinv = true;
+globalvar maxitems;; //total slots
+maxitems = 5;
 
-for (var i = 0; i &lt; totalslots; i++) {
-    global.slot[i] = "none";
-    coordx[i] = 0;
-    coordy[i] = 0;
+for (var i = 0; i &lt; maxitems; i++) {
+    global.inventory[i] = -1;
 }
 
-startingvalues();
-
-spr = nosprite;
-slottaken = -1;
 </string>
           </argument>
         </arguments>
@@ -61,37 +63,55 @@ slottaken = -1;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///draw the inventory
-var cellwidth = 16;
-var cellheight = 16;
-var startx = view_xview[0] + 32 + 16;
-var starty = view_yview[0] + 32 + 16;
-var width = 128 + 32;
-var height = 128 + 32;
-
-draw_set_color (c_gray);
-draw_set_alpha (0.8);
-
-draw_roundrect (startx, starty, startx + width, starty + height, false);
-
-for (var xx = startx + 16; xx &lt; startx + width; xx += 24) {
-    for (var yy = starty + 16; yy &lt; starty + height; yy += 24) {
-        coordx[curslot] = xx;
-        coordy[curslot] = yy;
-        
-        draw_set_color (c_dkgray);
-        draw_set_color (0.95);
-        draw_roundrect (xx, yy, xx + cellwidth, yy + cellheight, false);
-        curslot++;
-        if curslot &gt;= totalslots {
-           curslot = 0;
-        }
-    }
-    manageitems (cellwidth, cellheight)
+            <string>///draw inventory
+if showinv {
+   var x1, x2, y1, y2;
+   x1 = view_xview[0];
+   x2 = x1 + view_wview[0]
+   y1 = view_yview[0]
+   y2 = y1 + 32;
+   
+   draw_set_color (c_black);
+   draw_set_alpha (0.8);
+   draw_roundrect (x1, y1, x2, y2, false);
+   draw_set_alpha (1);
+   
+   for (var i = 0; i &lt; maxitems; i++){
+       draw_sprite (sborder, 0, x1 + 24 + (i * 24), y2 - 24)
+       if global.inventory[i] != -1 {
+          draw_sprite (sitems, global.inventory[i], x1 + 24 + (i * 24), y2 - 24)
+       }
+   }
 }
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="9" enumb="69">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>var addpotion;
+addpotion = itempickup(2);
 
-draw_set_alpha (1);
-draw_set_color (c_white);
+if addpotion == 0 {
+   //inventory full
+   show_message ("inventroy full")
+}
 </string>
           </argument>
         </arguments>

@@ -44,6 +44,7 @@
       </sprites>
       <sprite>sprites\scursor</sprite>
       <sprite>sprites\nosprite</sprite>
+      <sprite>sprites\sborder</sprite>
     </sprites>
     <sprites name="level">
       <sprite>sprites\sdialog</sprite>
@@ -67,6 +68,7 @@
       <sprite>sprites\shealth</sprite>
       <sprite>sprites\sexp</sprite>
       <sprite>sprites\smagic</sprite>
+      <sprite>sprites\sitems</sprite>
     </sprites>
   </sprites>
   <backgrounds name="background">
@@ -124,6 +126,11 @@
         <script>scripts\homingchasestate.gml</script>
         <script>scripts\homingstallstate.gml</script>
       </scripts>
+    </scripts>
+    <scripts name="inventory">
+      <script>scripts\itempickup.gml</script>
+      <script>scripts\itemdrop.gml</script>
+      <script>scripts\itemcheck.gml</script>
     </scripts>
   </scripts>
   <fonts name="fonts">
