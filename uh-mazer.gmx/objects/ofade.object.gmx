@@ -63,25 +63,21 @@ if alpha == 1 {
             //exited to the left
             room_goto (global.roomleft);
             oplayer.x = room_width - spawnmargin
-            ocamera.x = oplayer.x 
         }
         if oplayer.x &gt;= room_width {
             //exited to the right
             room_goto (global.roomright);
             oplayer.x = spawnmargin
-            ocamera.x = oplayer.x 
         }
         if oplayer.y &lt;= 0 {
             //exited to the top
             room_goto (global.roomtop);
             oplayer.y = room_height - spawnmargin
-            ocamera.y = oplayer.y 
         }
         if oplayer.y &gt;= room_height {
             //exited to the bottom
             room_goto (global.roombottom);
-            oplayer.y = spawnmargin;
-            ocamera.y = oplayer.y 
+            oplayer.y = spawnmargin; 
         }
     }
     fade = -1;
