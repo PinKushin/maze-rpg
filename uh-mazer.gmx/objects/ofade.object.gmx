@@ -3,7 +3,7 @@
   <spriteName>&lt;undefined&gt;</spriteName>
   <solid>0</solid>
   <visible>-1</visible>
-  <depth>0</depth>
+  <depth>-2000</depth>
   <persistent>-1</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
@@ -28,6 +28,75 @@
             <string>//initialise fade variables
 alpha = 0; 
 fade = 1;
+
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="8" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///draw the fade screen transition and goto next room
+alpha = clamp(alpha + (fade * 0.05), 0, 1);
+
+if alpha == 1 {
+    if instance_exists (oplayer) {
+        ///change to next room
+        var spawnmargin = 32;
+        
+        if oplayer.x &lt;= 0 {
+            //exited to the left
+            room_goto (global.roomleft);
+            oplayer.x = room_width - spawnmargin
+            ocamera.x = oplayer.x 
+        }
+        if oplayer.x &gt;= room_width {
+            //exited to the right
+            room_goto (global.roomright);
+            oplayer.x = spawnmargin
+            ocamera.x = oplayer.x 
+        }
+        if oplayer.y &lt;= 0 {
+            //exited to the top
+            room_goto (global.roomtop);
+            oplayer.y = room_height - spawnmargin
+            ocamera.y = oplayer.y 
+        }
+        if oplayer.y &gt;= room_height {
+            //exited to the bottom
+            room_goto (global.roombottom);
+            oplayer.y = spawnmargin;
+            ocamera.y = oplayer.y 
+        }
+    }
+    fade = -1;
+}
+
+if alpha == 0 &amp;&amp; fade == -1 {
+   instance_destroy ();
+}
+
+draw_set_color (c_black);
+draw_set_alpha (alpha);
+draw_rectangle (view_xview[0], view_yview[0], view_xview[0] + view_wview[0], view_yview[0] + view_hview[0], false);
+draw_set_color (c_white);
+draw_set_alpha (1);
+
 
 </string>
           </argument>

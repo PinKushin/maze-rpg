@@ -183,42 +183,6 @@ with oplayerstats {
         </arguments>
       </action>
     </event>
-    <event eventtype="4" ename="odoor">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>///go through the door
-if other.visible == true {
-    y = yprevious;
-    x = xprevious;
-    if (image_alpha &gt; 0) {
-        image_alpha -= .25;
-        } else {
-        if room_exists (global.door) {
-            room_goto (global.door)
-            newx = global.startx
-            newy = global.starty
-        }
-    }
-}
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
     <event eventtype="7" enumb="7">
       <action>
         <libid>1</libid>
@@ -263,28 +227,9 @@ if state == attackstate {
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///change to next room
-var spawnmargin = 32;
-
-if x &lt; 0 {
-    //exited to the left
-    room_goto (global.roomleft);
-    x = room_width - spawnmargin
-}
-if x &gt; room_width {
-    //exited to the right
-    x = spawnmargin
-    room_goto (global.roomright);
-}
-if y &lt; 0 {
-    //exited to the top
-    y = room_height - spawnmargin
-    room_goto (global.roomtop);
-}
-if y &gt; room_height {
-    //exited to the bottom
-    y = spawnmargin;
-    room_goto (global.roombottom);
+            <string>///create fade object
+if !instance_exists (ofade) {
+   instance_create (0, 0, ofade);
 }
 </string>
           </argument>

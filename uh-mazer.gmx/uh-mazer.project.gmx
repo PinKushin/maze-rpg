@@ -181,7 +181,6 @@
       <object>objects\oedamage</object>
     </objects>
     <objects name="game">
-      <object>objects\obackground</object>
       <object>objects\ofade</object>
       <object>objects\omenu</object>
       <object>objects\ocamera</object>
