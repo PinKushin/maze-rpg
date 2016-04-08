@@ -20,7 +20,7 @@ global.roombottom = rbottom</code>
   <makerSettings>
     <isSet>-1</isSet>
     <w>1024</w>
-    <h>654</h>
+    <h>627</h>
     <showGrid>-1</showGrid>
     <showObjects>-1</showObjects>
     <showTiles>-1</showTiles>
@@ -30,8 +30,8 @@ global.roombottom = rbottom</code>
     <deleteUnderlyingObj>0</deleteUnderlyingObj>
     <deleteUnderlyingTiles>-1</deleteUnderlyingTiles>
     <page>0</page>
-    <xoffset>-56</xoffset>
-    <yoffset>-50</yoffset>
+    <xoffset>-409</xoffset>
+    <yoffset>-272</yoffset>
   </makerSettings>
   <backgrounds>
     <background visible="-1" foreground="0" name="bhome" x="0" y="0" htiled="-1" vtiled="-1" hspeed="0" vspeed="0" stretch="0"/>
@@ -60,7 +60,6 @@ global.roombottom = rbottom</code>
     <instance objName="owall" x="128" y="432" name="inst_122103D1" locked="0" code="" scaleX="5" scaleY="0.5" colour="4294967295" rotation="0"/>
     <instance objName="owall" x="128" y="256" name="inst_87F56D84" locked="0" code="" scaleX="0.5" scaleY="6" colour="4294967295" rotation="0"/>
     <instance objName="owall" x="320" y="432" name="inst_03E3AD5B" locked="0" code="" scaleX="1" scaleY="0.5" colour="4294967295" rotation="0"/>
-    <instance objName="oinventory" x="336" y="160" name="inst_57C91362" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>

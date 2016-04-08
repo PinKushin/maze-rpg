@@ -76,7 +76,12 @@
     <background>background\bstarsfar</background>
     <backgrounds name="enviroment">
       <background>background\bgrass</background>
-      <background>background\btileset</background>
+      <backgrounds name="tiles">
+        <background>background\btileset</background>
+        <background>background\bcavetiles</background>
+        <background>background\bindoortiles</background>
+        <background>background\bcitytiles</background>
+      </backgrounds>
     </backgrounds>
     <background>background\bhome</background>
   </backgrounds>
@@ -194,6 +199,7 @@
   <rooms name="rooms">
     <room>rooms\rmenu</room>
     <room>rooms\rhome</room>
+    <room>rooms\rpawnentrance</room>
     <room>rooms\rhomeroom</room>
     <rooms name="test">
       <rooms name="enemys">
