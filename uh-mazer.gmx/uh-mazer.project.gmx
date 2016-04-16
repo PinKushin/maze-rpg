@@ -50,6 +50,7 @@
       <sprite>sprites\nosprite</sprite>
       <sprite>sprites\spart</sprite>
       <sprite>sprites\sbutton</sprite>
+      <sprite>sprites\stictactoe</sprite>
     </sprites>
     <sprites name="level">
       <sprite>sprites\sdialog</sprite>
@@ -95,6 +96,7 @@
       </backgrounds>
     </backgrounds>
     <background>background\bhome</background>
+    <background>background\bticktacktoe</background>
   </backgrounds>
   <paths name="paths"/>
   <scripts name="scripts">
@@ -230,8 +232,12 @@
         <object>objects\oselectedbutton</object>
       </objects>
     </objects>
+    <objects name="easter">
+      <object>objects\otictactoe</object>
+    </objects>
   </objects>
   <rooms name="rooms">
+    <room>rooms\rticktacktoe</room>
     <room>rooms\rmenu</room>
     <room>rooms\rhome</room>
     <room>rooms\rspells</room>
