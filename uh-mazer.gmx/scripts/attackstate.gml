@@ -22,6 +22,8 @@ switch (sprite_index)
          sprite_index = splayerattackright
     break;
 }
+
+///melee attack
 if image_index >= 3 && attacked == false //create dmg object on the correct frame
 {
     var xx = 0;

@@ -48,6 +48,20 @@ if attack {
     state = attackstate;
 }
 
+///change to spell state
+if spellattack && global.spellcost <= oplayerstats.mana{
+   image_index = 0;
+   state = spellstate;
+}else{
+  ///regen mana
+  if oplayerstats.mana < oplayerstats.maxmana {
+     oplayerstats.mana += oplayerstats.maxmana / 50;
+     if oplayerstats.mana > oplayerstats.maxmana {
+        oplayerstats.mana = oplayerstats.maxmana;
+     }
+  }
+}
+
 //change to dash state
 if dash && oplayerstats.stamina >= dashcost {
     oplayerstats.stamina -= dashcost

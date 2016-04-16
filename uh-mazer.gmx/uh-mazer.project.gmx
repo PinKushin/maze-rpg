@@ -29,6 +29,10 @@
         <sprite>sprites\splayerattackleft</sprite>
         <sprite>sprites\splayerattackdown</sprite>
         <sprite>sprites\splayerattackup</sprite>
+        <sprites name="spells">
+          <sprite>sprites\sfirespell</sprite>
+          <sprite>sprites\sicespell</sprite>
+        </sprites>
       </sprites>
     </sprites>
     <sprites name="helpers">
@@ -70,6 +74,8 @@
       <sprite>sprites\smagic</sprite>
       <sprite>sprites\sitems</sprite>
     </sprites>
+    <sprite>sprites\spart</sprite>
+    <sprite>sprites\sbutton</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bstarsclose</background>
@@ -112,6 +118,7 @@
       <script>scripts\dashstate.gml</script>
       <script>scripts\menustate.gml</script>
       <script>scripts\hurtstate.gml</script>
+      <script>scripts\spellstate.gml</script>
     </scripts>
     <scripts name="enemys">
       <scripts name="slime">
@@ -139,6 +146,11 @@
       <script>scripts\itempickupslot.gml</script>
       <script>scripts\itemdropslot.gml</script>
     </scripts>
+    <scripts name="particles">
+      <script>scripts\partfireinit.gml</script>
+      <script>scripts\particeinit.gml</script>
+      <script>scripts\partsparkinit.gml</script>
+    </scripts>
   </scripts>
   <fonts name="fonts">
     <font>fonts\fhuds</font>
@@ -155,6 +167,8 @@
       </objects>
     </objects>
     <objects name="parents">
+      <object>objects\obuttonpar</object>
+      <object>objects\ospellpar</object>
       <object>objects\osolidpar</object>
       <object>objects\oenemypar</object>
       <object>objects\oitempar</object>
@@ -172,6 +186,10 @@
         <object>objects\osword</object>
         <object>objects\ohealthpotion</object>
         <object>objects\omagicpotion</object>
+      </objects>
+      <objects name="spells">
+        <object>objects\ofireball</object>
+        <object>objects\oicespell</object>
       </objects>
     </objects>
     <objects name="enemys">
@@ -195,10 +213,20 @@
       <object>objects\omouseitem</object>
       <object>objects\oinvbutton</object>
     </objects>
+    <objects name="particles">
+      <object>objects\ops</object>
+    </objects>
+    <objects name="ui">
+      <objects name="buttons">
+        <object>objects\ofirebutton</object>
+        <object>objects\oicebutton</object>
+      </objects>
+    </objects>
   </objects>
   <rooms name="rooms">
     <room>rooms\rmenu</room>
     <room>rooms\rhome</room>
+    <room>rooms\rspells</room>
     <room>rooms\rpawnentrance</room>
     <room>rooms\rhomeroom</room>
     <rooms name="test">
