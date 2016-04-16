@@ -63,7 +63,7 @@ besttime = 0;
 
 
 ///spells
-global.spell = oicespell;
+global.spell = ofireball;
 global.spellcost = 3;
 
 </string>

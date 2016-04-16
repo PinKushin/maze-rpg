@@ -48,7 +48,8 @@
       </sprites>
       <sprite>sprites\scursor</sprite>
       <sprite>sprites\nosprite</sprite>
-      <sprite>sprites\sborder</sprite>
+      <sprite>sprites\spart</sprite>
+      <sprite>sprites\sbutton</sprite>
     </sprites>
     <sprites name="level">
       <sprite>sprites\sdialog</sprite>
@@ -74,8 +75,12 @@
       <sprite>sprites\smagic</sprite>
       <sprite>sprites\sitems</sprite>
     </sprites>
-    <sprite>sprites\spart</sprite>
-    <sprite>sprites\sbutton</sprite>
+    <sprites name="ui">
+      <sprite>sprites\sborder</sprite>
+      <sprite>sprites\sfirebutton</sprite>
+      <sprite>sprites\sicebutton</sprite>
+      <sprite>sprites\searthbutton</sprite>
+    </sprites>
   </sprites>
   <backgrounds name="background">
     <background>background\bstarsclose</background>
@@ -190,6 +195,7 @@
       <objects name="spells">
         <object>objects\ofireball</object>
         <object>objects\oicespell</object>
+        <object>objects\oearthspell</object>
       </objects>
     </objects>
     <objects name="enemys">
@@ -219,7 +225,9 @@
     <objects name="ui">
       <objects name="buttons">
         <object>objects\ofirebutton</object>
+        <object>objects\oearthbutton</object>
         <object>objects\oicebutton</object>
+        <object>objects\oselectedbutton</object>
       </objects>
     </objects>
   </objects>
