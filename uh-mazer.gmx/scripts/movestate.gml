@@ -40,7 +40,15 @@ if vspddir != 0 {
 //change sprites
 animatesprite (0.2, splayerright, splayerup, splayerleft, splayerdown)
 
-move (osolidpar);
+switch room {
+       //case (rdungeon): 
+           //movegrid(FLOOR);
+       //break;
+       
+       default: 
+            move (osolidpar)
+       break;
+}
 
 ///change to attack state
 if attack {

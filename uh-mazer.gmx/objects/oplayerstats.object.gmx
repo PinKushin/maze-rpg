@@ -195,7 +195,7 @@ switch (room) {
           <argument>
             <kind>1</kind>
             <string>///draw invisible
-//draw_self();
+draw_self();
 </string>
           </argument>
         </arguments>

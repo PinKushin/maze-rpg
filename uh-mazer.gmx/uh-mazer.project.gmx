@@ -18,6 +18,9 @@
     </sounds>
   </sounds>
   <sprites name="sprites">
+    <sprites name="mask">
+      <sprite>sprites\splayermask</sprite>
+    </sprites>
     <sprites name="player">
       <sprite>sprites\splayershadow</sprite>
       <sprite>sprites\splayerup</sprite>
@@ -43,9 +46,6 @@
       <sprite>sprites\sgame</sprite>
       <sprite>sprites\sinventory</sprite>
       <sprite>sprites\scamhelper</sprite>
-      <sprites name="mask">
-        <sprite>sprites\splayermask</sprite>
-      </sprites>
       <sprite>sprites\scursor</sprite>
       <sprite>sprites\nosprite</sprite>
       <sprite>sprites\spart</sprite>
@@ -59,6 +59,7 @@
         <sprites name="placeholder">
           <sprite>sprites\sdoor</sprite>
           <sprite>sprites\sWall</sprite>
+          <sprite>sprites\swallmask</sprite>
         </sprites>
       </sprites>
     </sprites>
@@ -82,6 +83,7 @@
       <sprite>sprites\sicebutton</sprite>
       <sprite>sprites\searthbutton</sprite>
     </sprites>
+    <sprite>sprites\slevelgen</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bstarsclose</background>
@@ -93,10 +95,13 @@
         <background>background\bcavetiles</background>
         <background>background\bindoortiles</background>
         <background>background\bcitytiles</background>
+        <background>background\bwalltiles</background>
       </backgrounds>
     </backgrounds>
     <background>background\bhome</background>
     <background>background\bticktacktoe</background>
+    <background>background\bfloor</background>
+    <background>background\bwall</background>
   </backgrounds>
   <paths name="paths"/>
   <scripts name="scripts">
@@ -108,6 +113,8 @@
         <script>scripts\getinput.gml</script>
         <script>scripts\facing.gml</script>
         <script>scripts\animatesprite.gml</script>
+        <script>scripts\movegrid.gml</script>
+        <script>scripts\gridplacemeeting.gml</script>
       </scripts>
       <scripts name="knockback">
         <script>scripts\damagebounce.gml</script>
@@ -171,7 +178,9 @@
       <objects name="structure">
         <object>objects\owall</object>
         <object>objects\odoor</object>
+        <object>objects\otilewall</object>
       </objects>
+      <object>objects\olevel</object>
     </objects>
     <objects name="parents">
       <object>objects\obuttonpar</object>
@@ -237,12 +246,13 @@
     </objects>
   </objects>
   <rooms name="rooms">
-    <room>rooms\rticktacktoe</room>
     <room>rooms\rmenu</room>
+    <room>rooms\rdungeon</room>
     <room>rooms\rhome</room>
     <room>rooms\rspells</room>
     <room>rooms\rpawnentrance</room>
     <room>rooms\rhomeroom</room>
+    <room>rooms\rticktacktoe</room>
     <rooms name="test">
       <rooms name="enemys">
         <room>rooms\rtestai</room>

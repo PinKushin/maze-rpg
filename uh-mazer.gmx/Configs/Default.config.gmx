@@ -634,7 +634,7 @@
     <option_xbone_title_id></option_xbone_title_id>
   </Options>
   <ConfigConstants>
-    <constants number="9">
+    <constants number="15">
       <constant name="STALL">0</constant>
       <constant name="DASH">0</constant>
       <constant name="STAMINA">1</constant>
@@ -644,6 +644,12 @@
       <constant name="DOWN">3</constant>
       <constant name="MOVE">1</constant>
       <constant name="SPELL">2</constant>
+      <constant name="CELLWIDTH">32</constant>
+      <constant name="CELLHEIGHT">32</constant>
+      <constant name="FLOOR">-5</constant>
+      <constant name="WALL">-6</constant>
+      <constant name="VOID">-7</constant>
+      <constant name="DEBUG">true</constant>
     </constants>
   </ConfigConstants>
 </Config>
