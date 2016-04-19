@@ -20,7 +20,7 @@ global.roombottom = rbottom</code>
   <makerSettings>
     <isSet>-1</isSet>
     <w>1024</w>
-    <h>654</h>
+    <h>663</h>
     <showGrid>-1</showGrid>
     <showObjects>-1</showObjects>
     <showTiles>-1</showTiles>
@@ -29,7 +29,7 @@ global.roombottom = rbottom</code>
     <showViews>0</showViews>
     <deleteUnderlyingObj>0</deleteUnderlyingObj>
     <deleteUnderlyingTiles>-1</deleteUnderlyingTiles>
-    <page>4</page>
+    <page>1</page>
     <xoffset>100</xoffset>
     <yoffset>17</yoffset>
   </makerSettings>

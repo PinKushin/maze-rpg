@@ -25,7 +25,7 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///CREATE THE LEVEL
+            <string>///create the level
 //resize
 room_width = (CELLWIDTH/16) * 720;
 room_height = (CELLHEIGHT/16) * 720;
@@ -56,10 +56,9 @@ var cdir = irandom(3);
 var odds = 1;
 
 //create the level uning 1000 steps
-
 repeat (1000) {
        //place a floor tile at the controller position
-       grid [# cx, cy,] = FLOOR
+       grid [# cx, cy] = FLOOR
        
        ///randomize the direction of the controller
        if irandom(odds) == odds {
@@ -71,8 +70,6 @@ repeat (1000) {
        var ydir = lengthdir_y (1, cdir * 90);
        cx += xdir;
        cy += ydir;
-       
-       instance_create (x, y, owall);
        //make sure we dont move outside the grid
        cx = clamp (cx, 1, width - 2);
        cy = clamp (cy, 1, height - 2);
@@ -82,7 +79,7 @@ for (var yy = 1; yy &lt; height - 1; yy++;) {
     for (var xx = 1; xx &lt; width - 1; xx++;) {
         if grid[# xx, yy] == FLOOR {
            ///check for walls
-           if grid[# xx, yy] != FLOOR {
+           if grid[# xx + 1, yy] != FLOOR {
               grid[# xx + 1, yy] = WALL;
            }
            if grid[# xx - 1, yy] != FLOOR {
@@ -105,20 +102,24 @@ for (var yy = 0; yy &lt; height; yy++) {
            ///draw the floor
            tile_add (bfloor, 0, 0, CELLWIDTH, CELLHEIGHT, xx * CELLWIDTH, yy * CELLHEIGHT,1000);
         }
+        //draw wall place
+        if grid[# xx, yy] == WALL {
+           tile_add (bwall, 0, 0, CELLWIDTH, CELLHEIGHT, xx * CELLWIDTH, yy * CELLHEIGHT, 1000);
+        }
     }
 }
 /// get tile sizes
 var tw = CELLWIDTH /  2;
 var th = CELLHEIGHT / 2;
 
-///add the tiles
-for (var yy = 0; yy &lt; height * 2; yy ++) {
+///draw the tiles
+for (var yy = 0; yy &lt; height * 2; yy++) {
     for (var xx = 0; xx &lt; width * 2; xx++){
         if grid[# xx div 2, yy div 2] == FLOOR {
            ///get tiles x, y, and depth
            var tx = xx * tw;
            var ty = yy * th;
-           var dpth = -ty + 2
+           var dpth = -ty + 5
            
            
            var right = grid[# (xx + 1) div 2, yy div 2] != FLOOR;
@@ -133,7 +134,7 @@ for (var yy = 0; yy &lt; height * 2; yy ++) {
            
            if right {
               if bottom{
-                 tile_add (bwalltiles, tw * 4, th * 1, tw, th, tx + tw, ty, dpth);
+                 tile_add (bwalltiles, tw * 4, th * 1, tw, th, tx + tw, ty, -ty - 8);
               
               }else if top {
                     if topright {
@@ -152,7 +153,7 @@ for (var yy = 0; yy &lt; height * 2; yy ++) {
            
            if left {
               if bottom {
-                 tile_add (bwalltiles, tw * 3, th * 1, tw, th, tx - tw, ty, dpth)
+                 tile_add (bwalltiles, tw * 3, th * 1, tw, th, tx - tw, ty, -ty - 8)
               }else if top {
                     if topleft {
                        tile_add (bwalltiles, tw * 3, th * 0, tw, th, tx - tw, ty - th, dpth)
@@ -171,50 +172,22 @@ for (var yy = 0; yy &lt; height * 2; yy ++) {
                   tile_add (bwalltiles, tw * 0, th * 2, tw, th, tx, ty - th, dpth)
               }else{
                   tile_add (bwalltiles, tw * 1, th * 2, tw, th, tx, ty - th, dpth)
-              }
-           
+              }  
            }
            
            if bottom {
               if  !bottomright {
-                  tile_add (bwalltiles, tw * 2, th * 0, tw, th, tx, ty, dpth)
+                  tile_add (bwalltiles, tw * 2, th * 0, tw, th, tx, ty, -ty - 8)
               } else if !bottomleft {
-                  tile_add (bwalltiles, tw * 0, th * 0, tw, th, tx, ty, dpth)
+                  tile_add (bwalltiles, tw * 0, th * 0, tw, th, tx, ty, -ty - 8)
               }else{
-                  tile_add (bwalltiles, tw * 1, th * 0, tw, th, tx, ty, dpth)
+                  tile_add (bwalltiles, tw * 1, th * 0, tw, th, tx, ty, -ty - 8)
               }
-           
-           }
-           
-           
+           } 
         }
     }
 }
 
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="9" enumb="82">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>///restart room
-room_restart ();
 </string>
           </argument>
         </arguments>

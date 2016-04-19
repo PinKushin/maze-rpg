@@ -4,7 +4,7 @@
   <solid>0</solid>
   <visible>-1</visible>
   <depth>0</depth>
-  <persistent>0</persistent>
+  <persistent>-1</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>splayermask</maskName>
   <events>
@@ -156,9 +156,7 @@ if pause {
 script_execute (state);
 
 move(osolidpar)
-//show_debug_message (hspd)
-//show_debug_message (vspd)
-//show_debug_message (acc)
+
 </string>
           </argument>
         </arguments>
@@ -225,7 +223,7 @@ with oplayerstats {
           <argument>
             <kind>1</kind>
             <string>///change back to movestate
-if state == attackstate || state == spellstate {
+if state == attackstate {
     state = movestate;
     attacked = false;
 }
@@ -252,7 +250,7 @@ if state == attackstate || state == spellstate {
           <argument>
             <kind>1</kind>
             <string>///create fade object
-if room != rspells {
+if room != rspells &amp;&amp; room != rdungeon {
     if !instance_exists (ofade) {
        instance_create (0, 0, ofade);
     }
@@ -283,8 +281,12 @@ if room != rspells {
 if DEBUG = true {
    draw_set_color (c_white);
    draw_set_alpha (1);
-   draw_text (32, 16, "ins: " + string(instance_count));
-   draw_text (128, 16, "fps: " + string(fps_real))
+   draw_text (38, 0, "DEBUG MODE");
+   draw_text (32, 16, "ins: " + string(instance_count)); ///instance count
+   draw_text (128, 16, "fps: " + string(fps_real)) ///frames per second
+   draw_text (126, 0, "hspd: " + string(hspd) + " vspd: " + string (vspd));
+   
+   
 }
 </string>
           </argument>
@@ -308,7 +310,7 @@ if DEBUG = true {
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///draw the shadown
+            <string>///draw the shadow
 draw_sprite (splayershadow, image_index, x, y);
 draw_self ()
 

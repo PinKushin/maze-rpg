@@ -20,6 +20,7 @@
   <sprites name="sprites">
     <sprites name="mask">
       <sprite>sprites\splayermask</sprite>
+      <sprite>sprites\sroommask</sprite>
     </sprites>
     <sprites name="player">
       <sprite>sprites\splayershadow</sprite>
@@ -57,9 +58,9 @@
       <sprites name="enviroment">
         <sprite>sprites\ssign</sprite>
         <sprites name="placeholder">
-          <sprite>sprites\sdoor</sprite>
           <sprite>sprites\sWall</sprite>
           <sprite>sprites\swallmask</sprite>
+          <sprite>sprites\sfloor</sprite>
         </sprites>
       </sprites>
     </sprites>
@@ -84,6 +85,7 @@
       <sprite>sprites\searthbutton</sprite>
     </sprites>
     <sprite>sprites\slevelgen</sprite>
+    <sprite>sprites\swall32x</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bstarsclose</background>
@@ -177,10 +179,12 @@
     <objects name="level">
       <objects name="structure">
         <object>objects\owall</object>
-        <object>objects\odoor</object>
         <object>objects\otilewall</object>
+        <object>objects\ofloor</object>
       </objects>
       <object>objects\olevel</object>
+      <object>objects\oroom</object>
+      <object>objects\ogeneraterooms</object>
     </objects>
     <objects name="parents">
       <object>objects\obuttonpar</object>
@@ -247,8 +251,8 @@
   </objects>
   <rooms name="rooms">
     <room>rooms\rmenu</room>
-    <room>rooms\rdungeon</room>
     <room>rooms\rhome</room>
+    <room>rooms\rdungeon</room>
     <room>rooms\rspells</room>
     <room>rooms\rpawnentrance</room>
     <room>rooms\rhomeroom</room>

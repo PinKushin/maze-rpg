@@ -14,8 +14,8 @@ vspd = lengthdir_y (len, dir)
 switch room {
     /*case rdungeon: 
          //Horizontal collisions
-        if gridplacemeeting (x + hspd, y, FLOOR){
-            while !gridplacemeeting (x + sign (hspd), y, FLOOR) {
+        if gridplacemeeting (x + hspd, y){
+            while !gridplacemeeting (x + sign (hspd), y) {
                 x += sign (hspd);
             }
             hspd = 0;
@@ -25,8 +25,8 @@ switch room {
         x += hspd;
         
         //Vertical collisions
-        if gridplacemeeting (x, y + vspd, FLOOR) {
-             while gridplacemeeting (x , y + sign (vspd), FLOOR) {
+        if gridplacemeeting (x, y + vspd) {
+             while gridplacemeeting (x , y + sign (vspd)) {
                 y += sign (vspd);
             }
             vspd = 0;
@@ -64,5 +64,5 @@ var dash = instance_create (x, y, odash);
 dash.sprite_index = sprite_index;
 dash.image_index = image_index;
 
-animatesprite (0.2, splayerright, splayerup, splayerleft, splayerdown)
+animatesprite (0.4, splayerright, splayerup, splayerleft, splayerdown)
 

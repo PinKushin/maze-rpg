@@ -2,7 +2,7 @@
 getinput();
 
 //get direction
-dir = point_direction (0, 0, hspddir, vspddir);;
+dir = point_direction (0, 0, hspddir, vspddir);
 dxspd = lengthdir_x (spd, dir);
 dyspd = lengthdir_y (spd, dir);
 
@@ -14,41 +14,68 @@ if hspddir == 0 && vspddir == 0 {
     facing ();
 }
 
-//move
-//horizontal
-if hspddir != 0 {
-    hspd += hspddir * spd;
+switch room {
+    case rdungeon:
+         //move on grid
+         if hspddir != 0 {
+            hspd += hspddir * spd;
+            
+            //diagnal cap
+            if hspd > dxspd { hspd = dxspd;}
+            if hspd < -dxspd { hspd = dxspd;}
+         }else{
+            //friction
+            applyhfriction (fric);
+         }
+         
+         if vspddir != 0 {
+            vspd += vspddir * spd;
+            
+            //diagnal cap
+            if vspd > dyspd {vspd = dyspd}
+            if vspd < -dyspd {vspd = dyspd}
+            
+         }else{
+            //friction
+            applyvfriction (fric);
+         }
+         movegrid (hspd, vspd);
+         
+         
+    break;
     
-    if hspd > dxspd { hspd = dxspd;}
-    if hspd < -dxspd { hspd = dxspd;}
-    //show_debug_message (hspd)
-}else{
-    //friction
-    applyhfriction (fric);
+    default:
+        //move
+        //horizontal
+        if hspddir != 0 {
+            hspd += hspddir * spd;
+            
+            //diagnal cap
+            if hspd > dxspd { hspd = dxspd;}
+            if hspd < -dxspd { hspd = dxspd;}
+        }else{
+            //friction
+            applyhfriction (fric);
+        }
+        ///vertical
+        if vspddir != 0 {
+            vspd += vspddir * spd;
+            
+            //diagnal cap
+            if vspd > dyspd { vspd = dyspd;}
+            if vspd < -dyspd { vspd = dyspd;}
+        }else{
+            //friction
+            applyvfriction (fric);
+        }
+        
+        move(osolidpar);
+    break;
 }
-///vertical
-if vspddir != 0 {
-    vspd += vspddir * spd;
-    
-    if vspd > dyspd { vspd = dyspd;}
-    if vspd < -dyspd { vspd = dyspd;}
-    //show_debug_message (vspd)
-}else{
-    //friction
-    applyvfriction (fric);
-}
+
+
 //change sprites
 animatesprite (0.2, splayerright, splayerup, splayerleft, splayerdown)
-
-switch room {
-       //case (rdungeon): 
-           //movegrid(FLOOR);
-       //break;
-       
-       default: 
-            move (osolidpar)
-       break;
-}
 
 ///change to attack state
 if attack {
@@ -84,3 +111,6 @@ if instance_exists (oplayerstats) {
         oplayerstats.stamina += 1;
     }
 }
+
+
+

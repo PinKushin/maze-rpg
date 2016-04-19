@@ -7,5 +7,4 @@ if (hspd != 0) {
     }else{
         hspd = 0;
     }
-    //show_debug_message (hspd)
 }
