@@ -251,8 +251,8 @@
   </objects>
   <rooms name="rooms">
     <room>rooms\rmenu</room>
-    <room>rooms\rhome</room>
     <room>rooms\rdungeon</room>
+    <room>rooms\rhome</room>
     <room>rooms\rspells</room>
     <room>rooms\rpawnentrance</room>
     <room>rooms\rhomeroom</room>

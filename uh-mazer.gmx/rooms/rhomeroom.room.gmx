@@ -81,7 +81,7 @@
     <instance objName="owall" x="240" y="176" name="inst_FD5027D5" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="owall" x="240" y="0" name="inst_8F6F1DA9" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="owall" x="224" y="-16" name="inst_570B7047" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="odoorright" x="160" y="224" name="inst_8B351846" locked="0" code="newroom = rhome;&#xA;startx = 368;&#xA;starty = 432;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="&lt;undefined&gt;" x="160" y="224" name="inst_8B351846" locked="0" code="newroom = rhome;&#xA;startx = 368;&#xA;starty = 432;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="oslime" x="112" y="96" name="inst_92857820" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>

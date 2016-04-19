@@ -12,29 +12,12 @@ vspd = lengthdir_y (len, dir)
 
 
 switch room {
-    /*case rdungeon: 
-         //Horizontal collisions
-        if gridplacemeeting (x + hspd, y){
-            while !gridplacemeeting (x + sign (hspd), y) {
-                x += sign (hspd);
-            }
-            hspd = 0;
-            state = movestate;
-        }
-        //move
-        x += hspd;
-        
-        //Vertical collisions
-        if gridplacemeeting (x, y + vspd) {
-             while gridplacemeeting (x , y + sign (vspd)) {
-                y += sign (vspd);
-            }
-            vspd = 0;
-            state = movestate;
-        }
-        //move
-        y += vspd;
-    break;*/
+    case rdungeon: 
+         //move on grid
+         movegrid (hspd, vspd);
+         
+         
+    break;
     
     
     default: 

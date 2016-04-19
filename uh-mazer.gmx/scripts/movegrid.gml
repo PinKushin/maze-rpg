@@ -10,7 +10,6 @@ if room = rdungeon {
         } 
         hspd = 0;
     }
-    
     //move
     x += hspd;
            
@@ -21,8 +20,6 @@ if room = rdungeon {
         }
         vspd = 0;
     }
-    
-    
     //move
     y += vspd;
 }
