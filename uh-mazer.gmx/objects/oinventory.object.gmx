@@ -34,7 +34,7 @@ inventory items
 */
 globalvar showinv; //display inventory
 showinv = false;
-globalvar maxitems;; //total slots
+globalvar maxitems; //total slots
 maxitems = 5;
 
 for (var i = 0; i &lt; maxitems; i++) {
@@ -69,27 +69,50 @@ instance_create(0, 0, omouseitem);
         <arguments>
           <argument>
             <kind>1</kind>
+            <string>///draw invisible
+if DEBUG == true { draw_self(); }
+
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
             <string>///draw inventory
 if showinv {
-   var x1, x2, y1, y2;
-   x1 = view_xview[0];
-   x2 = x1 + view_wview[0]
-   y1 = view_yview[0]
-   y2 = y1 + 32;
-   
-   draw_set_color (c_black);
-   draw_set_alpha (0.8);
-   draw_roundrect (x1, y1, x2, y2, false);
-   draw_set_alpha (1);
-   
-   for (var i = 0; i &lt; maxitems; i++){
-       var ix = x1 + 24 + (i * 24);
-       var iy = y2 - 24;
-       
-       draw_sprite (sborder, 0, ix, iy);
-       button[i].x = ix + 6;
-       button[i].y = iy + 6;
-   }
+    var x1, x2, y1, y2;
+    x1 = view_xview[0];
+    x2 = x1 + view_wview[0]
+    y1 = view_yview[0]
+    y2 = y1 + 32;
+    
+    draw_set_color (c_black);
+    draw_set_alpha (0.8);
+    draw_roundrect (x1, y1, x2, y2, false);
+    draw_set_alpha (1);
+    
+    for (var i = 0; i &lt; maxitems; i++){
+        var ix = x1 + 24 + (i * 24);
+        var iy = y2 - 24;
+        
+        draw_sprite (sborder, 0, ix, iy);
+        button[i].x = ix + 6;
+        button[i].y = iy + 6;
+    }
 }
 </string>
           </argument>

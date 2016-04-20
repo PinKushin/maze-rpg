@@ -6,81 +6,88 @@
   <NewExtensions/>
   <sounds name="sound">
     <sounds name="music">
-      <sound>sound\areturnhome</sound>
-      <sound>sound\afootrace</sound>
       <sound>sound\aairvillage</sound>
+      <sound>sound\afootrace</sound>
       <sound>sound\aredruin</sound>
+      <sound>sound\areturnhome</sound>
     </sounds>
     <sounds name="sfx">
-      <sound>sound\aexplosion</sound>
-      <sound>sound\aselect</sound>
       <sound>sound\ahurt</sound>
+      <sound>sound\aselect</sound>
+      <sound>sound\aexpr</sound>
+      <sound>sound\afirespell</sound>
+      <sound>sound\alevelup</sound>
     </sounds>
   </sounds>
   <sprites name="sprites">
-    <sprites name="player">
-      <sprite>sprites\splayershadow</sprite>
-      <sprite>sprites\splayerup</sprite>
-      <sprite>sprites\splayerleft</sprite>
-      <sprite>sprites\splayerright</sprite>
-      <sprite>sprites\splayerdown</sprite>
-      <sprites name="attack">
-        <sprite>sprites\splayerattackright</sprite>
-        <sprite>sprites\splayerattackleft</sprite>
-        <sprite>sprites\splayerattackdown</sprite>
-        <sprite>sprites\splayerattackup</sprite>
-        <sprites name="spells">
-          <sprite>sprites\sfirespell</sprite>
-          <sprite>sprites\sicespell</sprite>
-        </sprites>
-      </sprites>
-    </sprites>
-    <sprites name="helpers">
-      <sprite>sprites\sdamage</sprite>
-      <sprite>sprites\spdamage</sprite>
-      <sprite>sprites\splayerstats</sprite>
-      <sprite>sprites\sbackground</sprite>
-      <sprite>sprites\sgame</sprite>
-      <sprite>sprites\sinventory</sprite>
-      <sprite>sprites\scamhelper</sprite>
-      <sprites name="mask">
-        <sprite>sprites\splayermask</sprite>
-      </sprites>
-      <sprite>sprites\scursor</sprite>
-      <sprite>sprites\nosprite</sprite>
-      <sprite>sprites\spart</sprite>
-      <sprite>sprites\sbutton</sprite>
-      <sprite>sprites\stictactoe</sprite>
-    </sprites>
-    <sprites name="level">
-      <sprite>sprites\sdialog</sprite>
-      <sprites name="enviroment">
-        <sprite>sprites\ssign</sprite>
-        <sprites name="placeholder">
-          <sprite>sprites\sdoor</sprite>
-          <sprite>sprites\sWall</sprite>
-        </sprites>
-      </sprites>
-    </sprites>
     <sprites name="enemys">
-      <sprite>sprites\sslime</sprite>
       <sprite>sprites\shoming</sprite>
+      <sprite>sprites\sslime</sprite>
+      <sprite>sprites\ssnake</sprite>
     </sprites>
     <sprites name="fx">
       <sprite>sprites\sblood</sprite>
     </sprites>
+    <sprites name="helpers">
+      <sprite>sprites\nosprite</sprite>
+      <sprite>sprites\saudio</sprite>
+      <sprite>sprites\sbackground</sprite>
+      <sprite>sprites\sbutton</sprite>
+      <sprite>sprites\scamhelper</sprite>
+      <sprite>sprites\scursor</sprite>
+      <sprite>sprites\sdamage</sprite>
+      <sprite>sprites\sgame</sprite>
+      <sprite>sprites\sinventory</sprite>
+      <sprite>sprites\slevelgen</sprite>
+      <sprite>sprites\spart</sprite>
+      <sprite>sprites\spdamage</sprite>
+      <sprite>sprites\splayerstats</sprite>
+      <sprite>sprites\stictactoe</sprite>
+      <sprite>sprites\swall32x</sprite>
+    </sprites>
     <sprites name="items">
-      <sprite>sprites\ssword</sprite>
-      <sprite>sprites\shealth</sprite>
       <sprite>sprites\sexp</sprite>
-      <sprite>sprites\smagic</sprite>
+      <sprite>sprites\shealth</sprite>
       <sprite>sprites\sitems</sprite>
+      <sprite>sprites\smagic</sprite>
+      <sprite>sprites\ssword</sprite>
+    </sprites>
+    <sprites name="level">
+      <sprites name="enviroment">
+        <sprites name="placeholder">
+          <sprite>sprites\sfloor</sprite>
+          <sprite>sprites\sWall</sprite>
+          <sprite>sprites\swallmask</sprite>
+        </sprites>
+        <sprite>sprites\ssign</sprite>
+      </sprites>
+      <sprite>sprites\sdialog</sprite>
+    </sprites>
+    <sprites name="mask">
+      <sprite>sprites\splayermask</sprite>
+    </sprites>
+    <sprites name="player">
+      <sprites name="attack">
+        <sprites name="spells">
+          <sprite>sprites\sfirespell</sprite>
+          <sprite>sprites\sicespell</sprite>
+        </sprites>
+        <sprite>sprites\splayerattackdown</sprite>
+        <sprite>sprites\splayerattackleft</sprite>
+        <sprite>sprites\splayerattackright</sprite>
+        <sprite>sprites\splayerattackup</sprite>
+      </sprites>
+      <sprite>sprites\splayerdown</sprite>
+      <sprite>sprites\splayerleft</sprite>
+      <sprite>sprites\splayerright</sprite>
+      <sprite>sprites\splayershadow</sprite>
+      <sprite>sprites\splayerup</sprite>
     </sprites>
     <sprites name="ui">
       <sprite>sprites\sborder</sprite>
+      <sprite>sprites\searthbutton</sprite>
       <sprite>sprites\sfirebutton</sprite>
       <sprite>sprites\sicebutton</sprite>
-      <sprite>sprites\searthbutton</sprite>
     </sprites>
   </sprites>
   <backgrounds name="background">
@@ -93,20 +100,19 @@
         <background>background\bcavetiles</background>
         <background>background\bindoortiles</background>
         <background>background\bcitytiles</background>
+        <background>background\bwalltiles</background>
       </backgrounds>
     </backgrounds>
     <background>background\bhome</background>
     <background>background\bticktacktoe</background>
+    <background>background\bfloor</background>
+    <background>background\bwall</background>
   </backgrounds>
   <paths name="paths"/>
   <scripts name="scripts">
     <scripts name="helper">
       <scripts name="movement">
-        <script>scripts\applyhfriction.gml</script>
-        <script>scripts\applyvfriction.gml</script>
-        <script>scripts\move.gml</script>
         <script>scripts\getinput.gml</script>
-        <script>scripts\facing.gml</script>
         <script>scripts\animatesprite.gml</script>
       </scripts>
       <scripts name="knockback">
@@ -120,12 +126,19 @@
       </scripts>
     </scripts>
     <scripts name="player states">
-      <script>scripts\movestate.gml</script>
-      <script>scripts\attackstate.gml</script>
       <script>scripts\dashstate.gml</script>
       <script>scripts\menustate.gml</script>
       <script>scripts\hurtstate.gml</script>
       <script>scripts\spellstate.gml</script>
+      <scripts name="movement">
+        <script>scripts\movestate.gml</script>
+        <script>scripts\applyhfriction.gml</script>
+        <script>scripts\applyvfriction.gml</script>
+        <script>scripts\move.gml</script>
+        <script>scripts\facing.gml</script>
+        <script>scripts\movegrid.gml</script>
+        <script>scripts\gridplacemeeting.gml</script>
+      </scripts>
     </scripts>
     <scripts name="enemys">
       <scripts name="slime">
@@ -144,6 +157,9 @@
         <script>scripts\homingidlestate.gml</script>
         <script>scripts\homingchasestate.gml</script>
         <script>scripts\homingstallstate.gml</script>
+      </scripts>
+      <scripts name="dungeon">
+        <script>scripts\getpathtoplayer.gml</script>
       </scripts>
     </scripts>
     <scripts name="inventory">
@@ -170,8 +186,8 @@
     <objects name="level">
       <objects name="structure">
         <object>objects\owall</object>
-        <object>objects\odoor</object>
       </objects>
+      <object>objects\olevel</object>
     </objects>
     <objects name="parents">
       <object>objects\obuttonpar</object>
@@ -203,6 +219,7 @@
     <objects name="enemys">
       <object>objects\oslime</object>
       <object>objects\ohomingenemy</object>
+      <object>objects\osnake</object>
     </objects>
     <objects name="fx">
       <object>objects\oblood</object>
@@ -215,6 +232,7 @@
       <object>objects\ofade</object>
       <object>objects\omenu</object>
       <object>objects\ocamera</object>
+      <object>objects\omusic</object>
     </objects>
     <objects name="inventory">
       <object>objects\oinventory</object>
@@ -237,12 +255,11 @@
     </objects>
   </objects>
   <rooms name="rooms">
-    <room>rooms\rticktacktoe</room>
     <room>rooms\rmenu</room>
     <room>rooms\rhome</room>
+    <room>rooms\rdungeon</room>
     <room>rooms\rspells</room>
-    <room>rooms\rpawnentrance</room>
-    <room>rooms\rhomeroom</room>
+    <room>rooms\rticktacktoe</room>
     <rooms name="test">
       <rooms name="enemys">
         <room>rooms\rtestai</room>

@@ -38,10 +38,10 @@ global.spell = oicespell;
 global.spellcost = 3;
 
 //initialise variable
-hp = 20;
+hp = 3;
 maxhp = hp;
 
-stamina = 10;
+stamina = 5;
 maxstamina = stamina;
 
 mana = 10;
@@ -51,8 +51,6 @@ expr = 0;
 maxexpr = 3;
 
 level = 1;
-
-attack = 1;
 
 coins = 0;
 pscore = 0;
@@ -195,7 +193,36 @@ switch (room) {
           <argument>
             <kind>1</kind>
             <string>///draw invisible
-//draw_self();
+if DEBUG == true { draw_self(); }
+
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="9" enumb="82">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///restart room
+if instance_exists (oplayer){
+   //set player persistance to false
+   oplayer.persistent = false;
+}
+room_restart();
 </string>
           </argument>
         </arguments>

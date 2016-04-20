@@ -42,9 +42,13 @@ dir = 0;
 state = movestate;
 attacked = false;
 face = RIGHT;//0
-fric = 4 / room_speed;
+fric = room_speed / 5;
 dashspd = spd * 1.5;
 dashcost = 1;
+
+showinv = false
+
+sfx = audio_emitter_create();
 
 getinput();
 move (osolidpar)
@@ -145,19 +149,17 @@ state = movestate;
 depth = -y
 getinput();
 if pause {
-   if showinv = false {
-      showinv = true;
-   }else{
-      showinv = false;
-   }
+    if showinv = false {
+        showinv = true;
+    }else{
+        showinv = false;
+    }
 }
 
 script_execute (state);
 
 move(osolidpar)
-//show_debug_message (hspd)
-//show_debug_message (vspd)
-//show_debug_message (acc)
+
 </string>
           </argument>
         </arguments>
@@ -185,6 +187,7 @@ with other {
     instance_destroy ()
 }
 
+audio_play_sound (aexpr, 1, false);
 //level up
 with oplayerstats {
     expr += 1;
@@ -196,17 +199,18 @@ with oplayerstats {
         hp = maxhp;
         maxstamina += 5;
         stamina = maxstamina;
-        attack += 1;
+        maxmana += 5;
+        mana = maxmana;
+        audio_play_sound (alevelup, 1, false);
     }
 }
-        
-        
+
 </string>
           </argument>
         </arguments>
       </action>
     </event>
-    <event eventtype="7" enumb="7">
+    <event eventtype="7" enumb="3">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -223,11 +227,8 @@ with oplayerstats {
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///change back to movestate
-if state == attackstate || state == spellstate {
-    state = movestate;
-    attacked = false;
-}
+            <string>///destroy audio emitter
+audio_emitter_free (sfx);
 </string>
           </argument>
         </arguments>
@@ -251,10 +252,43 @@ if state == attackstate || state == spellstate {
           <argument>
             <kind>1</kind>
             <string>///create fade object
-if room != rspells {
+if room != rspells &amp;&amp; room != rdungeon {
     if !instance_exists (ofade) {
-       instance_create (0, 0, ofade);
+        instance_create (0, 0, ofade);
     }
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="8" enumb="64">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///debug
+if DEBUG = true {
+    draw_set_color (c_white);
+    draw_set_alpha (1);
+    draw_text (38, 0, "DEBUG MODE");
+    draw_text (32, 16, "ins: " + string(instance_count)); ///instance count
+    draw_text (128, 16, "fps: " + string(fps_real)) ///frames per second
+    draw_text (126, 0, "hspd: " + string(hspd) + " vspd: " + string (vspd));
+    
+    
 }
 </string>
           </argument>
@@ -278,9 +312,11 @@ if room != rspells {
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///draw the shadown
+            <string>///draw the shadow
 draw_sprite (splayershadow, image_index, x, y);
 draw_self ()
+
+
 </string>
           </argument>
         </arguments>

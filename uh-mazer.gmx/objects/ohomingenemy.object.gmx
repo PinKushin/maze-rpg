@@ -43,33 +43,6 @@ state = homingidlestate;
         </arguments>
       </action>
     </event>
-    <event eventtype="1" enumb="0">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>///create drop
-event_inherited ();
-
-instance_create (x, y, oexp);
-
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
     <event eventtype="2" enumb="1">
       <action>
         <libid>1</libid>
@@ -171,7 +144,7 @@ if instance_exists (other) {
         var xdir = lengthdir_x (1, dir);
         var ydir = lengthdir_y (1, dir);
         var damage = instance_create (other.x + xdir, other.y + ydir, oedamage);
-        damage.creator = self.id;
+        oedamage.creator = self.id;
         state = homingstallstate;
         alarm[STALL] = room_speed;
     }

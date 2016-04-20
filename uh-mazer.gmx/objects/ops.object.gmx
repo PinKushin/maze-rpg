@@ -108,7 +108,8 @@ part_system_destroy (global.ps);
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///draw invisable
+            <string>///draw invisible
+if DEBUG == true { draw_self(); }
 
 </string>
           </argument>
