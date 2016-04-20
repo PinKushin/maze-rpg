@@ -1,6 +1,6 @@
 ///movestate()
 getinput();
-
+image_blend = c_white;
 //get direction
 dir = point_direction (0, 0, hspddir, vspddir);
 dxspd = lengthdir_x (spd, dir);
@@ -16,6 +16,8 @@ if hspddir == 0 && vspddir == 0 {
 
 switch room {
     case rdungeon:
+         spd = 75 / room_speed;
+         dashspd = spd * 1.5;
          //move on grid
          if hspddir != 0 {
             hspd += hspddir * spd;
@@ -45,6 +47,8 @@ switch room {
     break;
     
     default:
+        spd = 42 / room_speed;
+        dashspd = spd * 1.5;
         //move
         //horizontal
         if hspddir != 0 {
@@ -76,12 +80,6 @@ switch room {
 
 //change sprites
 animatesprite (0.2, splayerright, splayerup, splayerleft, splayerdown)
-
-///change to attack state
-if attack {
-    image_index = 0;
-    state = attackstate;
-}
 
 ///change to spell state
 if spellattack && global.spellcost <= oplayerstats.mana{

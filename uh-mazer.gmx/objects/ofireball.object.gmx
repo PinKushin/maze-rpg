@@ -31,6 +31,7 @@ event_inherited()
 speed = 4;
 oplayer.alarm[SPELL] = 10;
 dmg = 1;
+audio_play_sound (afirespell, 1, false);
 </string>
           </argument>
         </arguments>

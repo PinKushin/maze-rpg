@@ -27,6 +27,7 @@
             <kind>1</kind>
             <string>///initialise
 hp = 3
+depth = -y
 </string>
           </argument>
         </arguments>
@@ -49,7 +50,7 @@ hp = 3
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///create blood
+            <string>///create blood and drop
 repeat (irandom_range(10, 20)) {
     //create within an area
     var randx = irandom_range (-4, 4);
@@ -57,6 +58,8 @@ repeat (irandom_range(10, 20)) {
     
     instance_create (x + randx, y + randy, oblood)
 }
+
+instance_create (x, y, oexp);
 </string>
           </argument>
         </arguments>

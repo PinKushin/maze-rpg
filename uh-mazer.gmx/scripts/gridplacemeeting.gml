@@ -14,11 +14,15 @@ y = yy;
 //check for meeting with floor
 if instance_exists (olevel){
     var xmeeting = (olevel.grid[# bbox_right div CELLWIDTH, bbox_top div CELLHEIGHT] != FLOOR) || 
-                   (olevel.grid[# bbox_left div CELLWIDTH, bbox_top div CELLHEIGHT] != FLOOR);
+                   (olevel.grid[# bbox_left div CELLWIDTH, bbox_top div CELLHEIGHT] != FLOOR) ||
+                   (olevel.grid[# bbox_right div CELLWIDTH, yy div CELLHEIGHT] != FLOOR) ||
+                   (olevel.grid[# bbox_left div CELLWIDTH, yy div CELLHEIGHT] != FLOOR);
     
-    var ymeeting = (olevel.grid[# bbox_right div CELLWIDTH, bbox_top div CELLHEIGHT] != FLOOR) || 
-                   (olevel.grid[# bbox_right div CELLWIDTH, bbox_bottom div CELLHEIGHT] != FLOOR);
-    
+    var ymeeting = (olevel.grid[# bbox_right div CELLWIDTH, bbox_top div CELLHEIGHT] != FLOOR) ||
+                   (olevel.grid[# bbox_left div CELLWIDTH, bbox_top div CELLHEIGHT] != FLOOR) ||
+                   (olevel.grid[# bbox_right div CELLWIDTH, bbox_bottom div CELLHEIGHT] != FLOOR) ||
+                   (olevel.grid[# bbox_left div CELLWIDTH, bbox_bottom div CELLHEIGHT] != FLOOR);
+                   
     var centermeeting = (olevel.grid[# xx div CELLWIDTH, yy div CELLHEIGHT] != FLOOR);
 }
 //move back

@@ -4,7 +4,7 @@
   <solid>0</solid>
   <visible>-1</visible>
   <depth>0</depth>
-  <persistent>-1</persistent>
+  <persistent>0</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>splayermask</maskName>
   <events>
@@ -46,6 +46,9 @@ fric = room_speed / 5;
 dashspd = spd * 1.5;
 dashcost = 1;
 
+showinv = false
+
+sfx = audio_emitter_create();
 
 getinput();
 move (osolidpar)
@@ -146,11 +149,11 @@ state = movestate;
 depth = -y
 getinput();
 if pause {
-   if showinv = false {
-      showinv = true;
-   }else{
-      showinv = false;
-   }
+    if showinv = false {
+        showinv = true;
+    }else{
+        showinv = false;
+    }
 }
 
 script_execute (state);
@@ -184,6 +187,7 @@ with other {
     instance_destroy ()
 }
 
+audio_play_sound (aexpr, 1, false);
 //level up
 with oplayerstats {
     expr += 1;
@@ -195,17 +199,18 @@ with oplayerstats {
         hp = maxhp;
         maxstamina += 5;
         stamina = maxstamina;
-        attack += 1;
+        maxmana += 5;
+        mana = maxmana;
+        audio_play_sound (alevelup, 1, false);
     }
 }
-        
-        
+
 </string>
           </argument>
         </arguments>
       </action>
     </event>
-    <event eventtype="7" enumb="7">
+    <event eventtype="7" enumb="3">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -222,11 +227,8 @@ with oplayerstats {
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///change back to movestate
-if state == attackstate {
-    state = movestate;
-    attacked = false;
-}
+            <string>///destroy audio emitter
+audio_emitter_free (sfx);
 </string>
           </argument>
         </arguments>
@@ -252,7 +254,7 @@ if state == attackstate {
             <string>///create fade object
 if room != rspells &amp;&amp; room != rdungeon {
     if !instance_exists (ofade) {
-       instance_create (0, 0, ofade);
+        instance_create (0, 0, ofade);
     }
 }
 </string>
@@ -279,14 +281,14 @@ if room != rspells &amp;&amp; room != rdungeon {
             <kind>1</kind>
             <string>///debug
 if DEBUG = true {
-   draw_set_color (c_white);
-   draw_set_alpha (1);
-   draw_text (38, 0, "DEBUG MODE");
-   draw_text (32, 16, "ins: " + string(instance_count)); ///instance count
-   draw_text (128, 16, "fps: " + string(fps_real)) ///frames per second
-   draw_text (126, 0, "hspd: " + string(hspd) + " vspd: " + string (vspd));
-   
-   
+    draw_set_color (c_white);
+    draw_set_alpha (1);
+    draw_text (38, 0, "DEBUG MODE");
+    draw_text (32, 16, "ins: " + string(instance_count)); ///instance count
+    draw_text (128, 16, "fps: " + string(fps_real)) ///frames per second
+    draw_text (126, 0, "hspd: " + string(hspd) + " vspd: " + string (vspd));
+    
+    
 }
 </string>
           </argument>

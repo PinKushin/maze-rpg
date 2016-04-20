@@ -38,10 +38,10 @@ global.spell = oicespell;
 global.spellcost = 3;
 
 //initialise variable
-hp = 20;
+hp = 3;
 maxhp = hp;
 
-stamina = 10;
+stamina = 5;
 maxstamina = stamina;
 
 mana = 10;
@@ -51,8 +51,6 @@ expr = 0;
 maxexpr = 3;
 
 level = 1;
-
-attack = 1;
 
 coins = 0;
 pscore = 0;
@@ -220,6 +218,10 @@ if DEBUG == true { draw_self(); }
           <argument>
             <kind>1</kind>
             <string>///restart room
+if instance_exists (oplayer){
+   //set player persistance to false
+   oplayer.persistent = false;
+}
 room_restart();
 </string>
           </argument>

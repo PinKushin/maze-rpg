@@ -26,21 +26,34 @@
           <argument>
             <kind>1</kind>
             <string>///create the level
-//resize
+
+//resize the room
 room_width = (CELLWIDTH/16) * 720;
 room_height = (CELLHEIGHT/16) * 720;
 
 //set the grid width and height
 var width = room_width div CELLWIDTH;
 var height = room_height div CELLHEIGHT;
-///crate grid
+
+///create grid
 grid = ds_grid_create (width, height);
+
+//create pathfinding grid
+gridpath = mp_grid_create (0, 0, width, height, CELLWIDTH, CELLHEIGHT);
 
 ///fill the void
 ds_grid_set_region (grid, 0, 0, width - 1, height - 1, VOID);
 
-/// randomize the world
-randomize ();
+///load a room
+if show_question ("Would you like to load a room?") {
+   var key = get_string ("What is the name of the room", "default")
+   ini_open ("save.ini");
+   var seed = ini_read_real ("rooms", key, 0);
+   random_set_seed (seed);
+}else{
+    /// randomize the world
+    randomize ();
+}
 
 //create the controller at the center of the grid 
 var cx = width div 2;
@@ -75,6 +88,7 @@ repeat (1000) {
        cy = clamp (cy, 1, height - 2);
 }
 
+//add the walls
 for (var yy = 1; yy &lt; height - 1; yy++;) {
     for (var xx = 1; xx &lt; width - 1; xx++;) {
         if grid[# xx, yy] == FLOOR {
@@ -95,12 +109,30 @@ for (var yy = 1; yy &lt; height - 1; yy++;) {
     }
 }
 
+//delete walls that are alone
+for (var yy = 1; yy &lt; height - 1; yy++;) {
+    for (var xx = 1; xx &lt; width - 1; xx++;) {
+        if grid[# xx, yy] == WALL &amp;&amp; grid[# xx + 1, yy] == FLOOR &amp;&amp; grid[# xx - 1, yy] == FLOOR &amp;&amp; grid[# xx, yy + 1] == FLOOR &amp;&amp; grid[# xx, yy - 1] == FLOOR  {
+           grid[# xx, yy] = FLOOR;
+        } 
+    }
+}
+
 ///draw the level using the grid
 for (var yy = 0; yy &lt; height; yy++) {
     for (var xx = 0; xx &lt; width; xx++){
+        ///draw the floor
         if grid[# xx, yy] == FLOOR {
-           ///draw the floor
            tile_add (bfloor, 0, 0, CELLWIDTH, CELLHEIGHT, xx * CELLWIDTH, yy * CELLHEIGHT,1000);
+           //add some enemys
+           var eodds = 20
+           var ex = xx * CELLWIDTH + CELLWIDTH / 2;
+           var ey = yy * CELLHEIGHT + CELLHEIGHT / 2;
+           if point_distance (ex, ey, oplayer.x, oplayer.y) &gt; 80 &amp;&amp; irandom (eodds) == eodds{
+              instance_create (ex, ey, osnake);
+           }
+        }else{
+              mp_grid_add_cell (gridpath, xx, yy);
         }
         //draw wall place
         if grid[# xx, yy] == WALL {
@@ -116,10 +148,9 @@ var th = CELLHEIGHT / 2;
 for (var yy = 0; yy &lt; height * 2; yy++) {
     for (var xx = 0; xx &lt; width * 2; xx++){
         if grid[# xx div 2, yy div 2] == FLOOR {
-           ///get tiles x, y, and depth
+           ///get tiles x and y
            var tx = xx * tw;
            var ty = yy * th;
-           var dpth = -ty + 5
            
            
            var right = grid[# (xx + 1) div 2, yy div 2] != FLOOR;
@@ -134,60 +165,113 @@ for (var yy = 0; yy &lt; height * 2; yy++) {
            
            if right {
               if bottom{
-                 tile_add (bwalltiles, tw * 4, th * 1, tw, th, tx + tw, ty, -ty - 8);
+                 tile_add (bwalltiles, tw * 4, th * 1, tw, th, tx + tw, ty, -ty - tw);
               
               }else if top {
                     if topright {
-                       tile_add (bwalltiles, tw * 4, th * 0, tw, th, tx + tw, ty - th, dpth);
+                       tile_add (bwalltiles, tw * 4, th * 0, tw, th, tx + tw, ty - th, -ty);
                     }else{
-                          tile_add (bwalltiles, tw * 3, th * 0, tw, th, tx, ty - th, dpth);
+                          tile_add (bwalltiles, tw * 3, th * 0, tw, th, tx, ty - th, -ty);
                     }
-                    tile_add (bwalltiles, tw * 0, th * 1, tw, th, tx + tw, ty, dpth);
+                    tile_add (bwalltiles, tw * 0, th * 1, tw, th, tx + tw, ty, -ty);
                     
               
               }else{
               
-                    tile_add (bwalltiles, tw * 0, th * 1, tw, th, tx + tw, ty, dpth);
+                    tile_add (bwalltiles, tw * 0, th * 1, tw, th, tx + tw, ty, -ty);
               }
            }
            
            if left {
               if bottom {
-                 tile_add (bwalltiles, tw * 3, th * 1, tw, th, tx - tw, ty, -ty - 8)
+                 tile_add (bwalltiles, tw * 3, th * 1, tw, th, tx - tw, ty, -ty - tw)
               }else if top {
                     if topleft {
-                       tile_add (bwalltiles, tw * 3, th * 0, tw, th, tx - tw, ty - th, dpth)
+                       tile_add (bwalltiles, tw * 3, th * 0, tw, th, tx - tw, ty - th, -ty)
                     }else{
-                       tile_add (bwalltiles, tw * 4, th * 0, tw, th, tx, ty - th, dpth)
+                       tile_add (bwalltiles, tw * 4, th * 0, tw, th, tx, ty - th, -ty)
                     }
-                    tile_add (bwalltiles, tw * 2, th * 1, tw, th, tx - tw, ty, dpth)
+                    tile_add (bwalltiles, tw * 2, th * 1, tw, th, tx - tw, ty, -ty)
               }else{
-                    tile_add (bwalltiles, tw * 2, th * 1, tw, th, tx - tw, ty, dpth) 
+                    tile_add (bwalltiles, tw * 2, th * 1, tw, th, tx - tw, ty, -ty) 
               }
            }
            if top {
-              if  !topright {
-                  tile_add (bwalltiles, tw * 2, th * 2, tw, th, tx, ty - th, dpth)
+              if !topright {
+                  tile_add (bwalltiles, tw * 2, th * 2, tw, th, tx, ty - th, -ty + 4)
               } else if !topleft {
-                  tile_add (bwalltiles, tw * 0, th * 2, tw, th, tx, ty - th, dpth)
+                  tile_add (bwalltiles, tw * 0, th * 2, tw, th, tx, ty - th, -ty + 4)
               }else{
-                  tile_add (bwalltiles, tw * 1, th * 2, tw, th, tx, ty - th, dpth)
+                  tile_add (bwalltiles, tw * 1, th * 2, tw, th, tx, ty - th, -ty + 4)
               }  
            }
            
            if bottom {
-              if  !bottomright {
-                  tile_add (bwalltiles, tw * 2, th * 0, tw, th, tx, ty, -ty - 8)
+              if !bottomright {
+                  tile_add (bwalltiles, tw * 2, th * 0, tw, th, tx, ty, -ty - tw)
               } else if !bottomleft {
-                  tile_add (bwalltiles, tw * 0, th * 0, tw, th, tx, ty, -ty - 8)
+                  tile_add (bwalltiles, tw * 0, th * 0, tw, th, tx, ty, -ty - tw)
               }else{
-                  tile_add (bwalltiles, tw * 1, th * 0, tw, th, tx, ty, -ty - 8)
+                  tile_add (bwalltiles, tw * 1, th * 0, tw, th, tx, ty, -ty - tw)
               }
            } 
         }
     }
 }
 
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="8" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///draw invisible
+if DEBUG == true { draw_self(); }
+
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="9" enumb="81">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///save the room
+ini_open ("save.ini");
+var key = get_string ("What will you name the room", "default");
+var val = random_get_seed();
+ini_write_real ("rooms" , key, val);
+ini_close();
 </string>
           </argument>
         </arguments>
