@@ -27,13 +27,14 @@
             <kind>1</kind>
             <string>///initialise snake
 event_inherited ();
+scale = 0.5;
 image_speed = 0.2;
-image_xscale = 0.5;
+image_xscale = scale;
 image_yscale = image_xscale;
 
 spd = 1;
 path = path_add();
-alarm[0] = room_speed;
+alarm[0] = room_speed / 2;
 
 </string>
           </argument>
@@ -87,7 +88,7 @@ if path_exists (path) {
             <kind>1</kind>
             <string>///move toward the player
 getpathtoplayer()
-alarm[0] = room_speed;
+alarm[0] = room_speed / 2;
 </string>
           </argument>
         </arguments>
@@ -113,7 +114,33 @@ alarm[0] = room_speed;
             <string>///control enemy
 event_inherited ();
 
+face = point_direction (x, y, oplayer.x, y)
+if face == 0 { image_xscale = scale; }
+if face == 180 { image_xscale = -scale; }
+
 </string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="4" ename="oplayer">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string></string>
           </argument>
         </arguments>
       </action>

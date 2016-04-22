@@ -136,7 +136,7 @@ for (var yy = 0; yy &lt; height; yy++) {
         }
         //draw wall place
         if grid[# xx, yy] == WALL {
-           tile_add (bwall, 0, 0, CELLWIDTH, CELLHEIGHT, xx * CELLWIDTH, yy * CELLHEIGHT, 1000);
+           instance_create (xx * CELLWIDTH, yy * CELLHEIGHT, owall);
         }
     }
 }

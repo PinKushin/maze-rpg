@@ -2,7 +2,7 @@
 
 //line of site artificial intelligence
 var thing = argument0;
-result = false;
+var result = false;
 
 if instance_exists (thing)
 {

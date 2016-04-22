@@ -151,15 +151,15 @@
       </scripts>
       <scripts name="helpers">
         <script>scripts\lineofsite.gml</script>
-        <script>scripts\checkforplayer.gml</script>
+        <scripts name="dungeon">
+          <script>scripts\getpathtoplayer.gml</script>
+        </scripts>
       </scripts>
       <scripts name="homingenemy">
         <script>scripts\homingidlestate.gml</script>
         <script>scripts\homingchasestate.gml</script>
         <script>scripts\homingstallstate.gml</script>
-      </scripts>
-      <scripts name="dungeon">
-        <script>scripts\getpathtoplayer.gml</script>
+        <script>scripts\checkforplayer.gml</script>
       </scripts>
     </scripts>
     <scripts name="inventory">

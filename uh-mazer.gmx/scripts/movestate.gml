@@ -14,69 +14,30 @@ if hspddir == 0 && vspddir == 0 {
     facing ();
 }
 
-switch room {
-    case rdungeon:
-         spd = 75 / room_speed;
-         dashspd = spd * 1.5;
-         //move on grid
-         if hspddir != 0 {
-            hspd += hspddir * spd;
-            
-            //diagnal cap
-            if hspd > dxspd { hspd = dxspd;}
-            if hspd < -dxspd { hspd = dxspd;}
-         }else{
-            //friction
-            applyhfriction (fric);
-         }
-         
-         if vspddir != 0 {
-            vspd += vspddir * spd;
-            
-            //diagnal cap
-            if vspd > dyspd {vspd = dyspd}
-            if vspd < -dyspd {vspd = dyspd}
-            
-         }else{
-            //friction
-            applyvfriction (fric);
-         }
-         movegrid (hspd, vspd);
-         
-         
-    break;
+//move
+//horizontal
+if hspddir != 0 {
+    hspd += hspddir * spd;
     
-    default:
-        spd = 42 / room_speed;
-        dashspd = spd * 1.5;
-        //move
-        //horizontal
-        if hspddir != 0 {
-            hspd += hspddir * spd;
-            
-            //diagnal cap
-            if hspd > dxspd { hspd = dxspd;}
-            if hspd < -dxspd { hspd = dxspd;}
-        }else{
-            //friction
-            applyhfriction (fric);
-        }
-        ///vertical
-        if vspddir != 0 {
-            vspd += vspddir * spd;
-            
-            //diagnal cap
-            if vspd > dyspd { vspd = dyspd;}
-            if vspd < -dyspd { vspd = dyspd;}
-        }else{
-            //friction
-            applyvfriction (fric);
-        }
-        
-        move(osolidpar);
-    break;
+    //diagnal cap
+    if hspd > dxspd { hspd = dxspd;}
+    if hspd < -dxspd { hspd = dxspd;}
+}else{
+    //friction
+    applyhfriction (fric);
 }
-
+///vertical
+if vspddir != 0 {
+    vspd += vspddir * spd;
+    
+    //diagnal cap
+    if vspd > dyspd { vspd = dyspd;}
+    if vspd < -dyspd { vspd = dyspd;}
+}else{
+    //friction
+    applyvfriction (fric);
+}
+move(osolidpar);
 
 //change sprites
 animatesprite (0.2, splayerright, splayerup, splayerleft, splayerdown)
