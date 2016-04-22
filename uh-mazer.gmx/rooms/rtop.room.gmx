@@ -20,7 +20,7 @@ global.roombottom = rhome</code>
   <makerSettings>
     <isSet>-1</isSet>
     <w>1024</w>
-    <h>636</h>
+    <h>609</h>
     <showGrid>-1</showGrid>
     <showObjects>-1</showObjects>
     <showTiles>-1</showTiles>
@@ -30,8 +30,8 @@ global.roombottom = rhome</code>
     <deleteUnderlyingObj>0</deleteUnderlyingObj>
     <deleteUnderlyingTiles>-1</deleteUnderlyingTiles>
     <page>3</page>
-    <xoffset>-103</xoffset>
-    <yoffset>-130</yoffset>
+    <xoffset>-332</xoffset>
+    <yoffset>-308</yoffset>
   </makerSettings>
   <backgrounds>
     <background visible="-1" foreground="0" name="bgrass" x="0" y="0" htiled="-1" vtiled="-1" hspeed="0" vspeed="0" stretch="0"/>

@@ -114,7 +114,9 @@ alarm[0] = room_speed / 2;
             <string>///control enemy
 event_inherited ();
 
-face = point_direction (x, y, oplayer.x, y)
+///face toward the player
+var face = point_direction (x, y, oplayer.x, y);
+
 if face == 0 { image_xscale = scale; }
 if face == 180 { image_xscale = -scale; }
 
@@ -140,7 +142,8 @@ if face == 180 { image_xscale = -scale; }
         <arguments>
           <argument>
             <kind>1</kind>
-            <string></string>
+            <string>///damage player
+</string>
           </argument>
         </arguments>
       </action>

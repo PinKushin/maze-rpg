@@ -125,12 +125,18 @@ for (var yy = 0; yy &lt; height; yy++) {
         if grid[# xx, yy] == FLOOR {
            tile_add (bfloor, 0, 0, CELLWIDTH, CELLHEIGHT, xx * CELLWIDTH, yy * CELLHEIGHT,1000);
            //add some enemys
-           var eodds = 20
+           var eodds = 20;
            var ex = xx * CELLWIDTH + CELLWIDTH / 2;
            var ey = yy * CELLHEIGHT + CELLHEIGHT / 2;
            if point_distance (ex, ey, oplayer.x, oplayer.y) &gt; 80 &amp;&amp; irandom (eodds) == eodds {
               instance_create (ex, ey, osnake);
            }
+           
+           ///add exit
+           var hodds = 50;
+           if point_distance (xx * CELLWIDTH, yy * CELLHEIGHT, oplayer.x, oplayer.y) &gt; 160 &amp;&amp; irandom (hodds) == hodds &amp;&amp; !instance_exists (oexit) {
+              instance_create (xx * CELLWIDTH, yy * CELLHEIGHT, oexit);
+           } 
         }else{
               mp_grid_add_cell (gridpath, xx, yy);
         }

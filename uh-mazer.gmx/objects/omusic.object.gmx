@@ -60,6 +60,9 @@ switch room {
             }
        break;
        
+       case rspells:
+       break;
+       
        default:
                if audio_is_playing (aredruin) { audio_stop_sound (aredruin); }
                if !audio_is_playing (areturnhome) {

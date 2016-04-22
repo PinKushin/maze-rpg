@@ -29,7 +29,7 @@
 display_set_gui_size (view_wview[view_current], view_hview[view_current]);
 
 ///initialise globals
-
+global.roomlast = noone;
 //rooms
 global.spellswitch = noone;
 

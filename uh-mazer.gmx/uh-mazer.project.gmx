@@ -24,6 +24,7 @@
       <sprite>sprites\shoming</sprite>
       <sprite>sprites\sslime</sprite>
       <sprite>sprites\ssnake</sprite>
+      <sprite>sprites\senemyspawn</sprite>
     </sprites>
     <sprites name="fx">
       <sprite>sprites\sblood</sprite>
@@ -114,6 +115,8 @@
       <scripts name="movement">
         <script>scripts\getinput.gml</script>
         <script>scripts\animatesprite.gml</script>
+        <script>scripts\movegrid.gml</script>
+        <script>scripts\gridplacemeeting.gml</script>
       </scripts>
       <scripts name="knockback">
         <script>scripts\damagebounce.gml</script>
@@ -136,8 +139,6 @@
         <script>scripts\applyvfriction.gml</script>
         <script>scripts\move.gml</script>
         <script>scripts\facing.gml</script>
-        <script>scripts\movegrid.gml</script>
-        <script>scripts\gridplacemeeting.gml</script>
       </scripts>
     </scripts>
     <scripts name="enemys">
@@ -186,6 +187,8 @@
     <objects name="level">
       <objects name="structure">
         <object>objects\owall</object>
+        <object>objects\oentrance</object>
+        <object>objects\oexit</object>
       </objects>
       <object>objects\olevel</object>
     </objects>
@@ -220,6 +223,7 @@
       <object>objects\oslime</object>
       <object>objects\ohomingenemy</object>
       <object>objects\osnake</object>
+      <object>objects\oenemyspawn</object>
     </objects>
     <objects name="fx">
       <object>objects\oblood</object>
@@ -256,8 +260,8 @@
   </objects>
   <rooms name="rooms">
     <room>rooms\rmenu</room>
-    <room>rooms\rdungeon</room>
     <room>rooms\rhome</room>
+    <room>rooms\rdungeon</room>
     <room>rooms\rspells</room>
     <room>rooms\rticktacktoe</room>
     <rooms name="test">
@@ -265,7 +269,6 @@
         <room>rooms\rtestai</room>
       </rooms>
       <rooms name="room transition test">
-        <room>rooms\rcenter</room>
         <room>rooms\rtop</room>
         <room>rooms\rleft</room>
         <room>rooms\rright</room>
