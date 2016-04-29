@@ -29,12 +29,13 @@
 display_set_gui_size (view_wview[view_current], view_hview[view_current]);
 
 ///initialise globals
-global.roomlast = noone;
+
 //rooms
-global.spellswitch = noone;
+global.roomlast = noone;
 
 ///spells
-global.spell = oicespell;
+global.spellswitch = noone;
+global.spell = ofireball;
 global.spellcost = 3;
 
 //initialise variable
@@ -58,11 +59,6 @@ highscore = 0;
 
 time = 0;
 besttime = 0;
-
-
-///spells
-global.spell = ofireball;
-global.spellcost = 3;
 
 </string>
           </argument>
@@ -110,18 +106,13 @@ if hp &lt;= 0 {
 
 if spellpause {
    if room != rspells {
-   global.spellswitch = room;
-   room_persistent = true;
-   room_goto (rspells);
+       global.spellswitch = room;
+       room_persistent = true;
+       room_goto (rspells);
    }else{
          room_goto (global.spellswitch);
    }
 }
-
-
-/*if mouse_check_button_pressed (mb_left){
-    instance_create(mouse_x, mouse_y, opdamage)
-}*/
 
 </string>
           </argument>

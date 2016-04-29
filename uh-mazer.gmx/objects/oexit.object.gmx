@@ -26,7 +26,6 @@
           <argument>
             <kind>1</kind>
             <string>///goto overworld
-oplayer.persistent = true;
 room_goto (global.roomlast);
 
 </string>

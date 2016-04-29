@@ -26,7 +26,6 @@
           <argument>
             <kind>1</kind>
             <string>///initialise dash
-
 image_alpha = 0.5
 
 </string>

@@ -26,12 +26,12 @@
           <argument>
             <kind>1</kind>
             <string>///initialise earth aoe
-dmg = 1;
+dmg = 0.1;
 knockback = 1;
 x = mouse_x;
 y = mouse_y;
 oplayer.alarm[SPELL] = 30;
-alarm[0] = room_speed * 3;
+alarm[0] = room_speed * 2;
 
 
 </string>

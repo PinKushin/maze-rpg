@@ -26,7 +26,6 @@
           <argument>
             <kind>1</kind>
             <string>///goto dungeon
-oplayer.persistent = false;
 global.roomlast = room;
 room_goto (rdungeon);
 </string>

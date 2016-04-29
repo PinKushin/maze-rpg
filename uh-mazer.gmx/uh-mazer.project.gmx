@@ -163,13 +163,6 @@
         <script>scripts\checkforplayer.gml</script>
       </scripts>
     </scripts>
-    <scripts name="inventory">
-      <script>scripts\itempickup.gml</script>
-      <script>scripts\itemdrop.gml</script>
-      <script>scripts\itemcheck.gml</script>
-      <script>scripts\itempickupslot.gml</script>
-      <script>scripts\itemdropslot.gml</script>
-    </scripts>
     <scripts name="particles">
       <script>scripts\partfireinit.gml</script>
       <script>scripts\particeinit.gml</script>
@@ -208,11 +201,6 @@
       <objects name="powerups">
         <object>objects\odash</object>
       </objects>
-      <objects name="items">
-        <object>objects\osword</object>
-        <object>objects\ohealthpotion</object>
-        <object>objects\omagicpotion</object>
-      </objects>
       <objects name="spells">
         <object>objects\ofireball</object>
         <object>objects\oicespell</object>
@@ -233,15 +221,9 @@
       <object>objects\oedamage</object>
     </objects>
     <objects name="game">
-      <object>objects\ofade</object>
       <object>objects\omenu</object>
       <object>objects\ocamera</object>
       <object>objects\omusic</object>
-    </objects>
-    <objects name="inventory">
-      <object>objects\oinventory</object>
-      <object>objects\omouseitem</object>
-      <object>objects\oinvbutton</object>
     </objects>
     <objects name="particles">
       <object>objects\ops</object>
@@ -267,12 +249,6 @@
     <rooms name="test">
       <rooms name="enemys">
         <room>rooms\rtestai</room>
-      </rooms>
-      <rooms name="room transition test">
-        <room>rooms\rtop</room>
-        <room>rooms\rleft</room>
-        <room>rooms\rright</room>
-        <room>rooms\rbottom</room>
       </rooms>
     </rooms>
   </rooms>
